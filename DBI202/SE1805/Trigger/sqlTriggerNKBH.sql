@@ -1,0 +1,95 @@
+﻿CREATE DATABASE triggerNKBH
+USE triggerNKBH
+
+CREATE TABLE tblMATHANG
+(
+		MaHang NVARCHAR (5) PRIMARY KEY,
+		TenHang NVARCHAR (50) NOT NULL,
+		SoLuong INT DEFAULT 0
+);
+
+CREATE TABLE tblNKBH
+(
+		STT INT IDENTITY,
+		MaHang NVARCHAR (5) NOT NULL,
+		Ngay DATE DEFAULT GETDATE(),
+		NguoiMua NVARCHAR (50) DEFAULT N'No name' NOT NULL,		
+		SoLuong INT,
+		GiaBan INT,
+		FOREIGN KEY (MaHang) REFERENCES tblMATHANG (MaHang)
+);
+
+INSERT INTO tblMATHANG VALUES('H1',N'Xà phòng',30)
+INSERT INTO tblMATHANG VALUES('H2',N'Kem đánh răng',45)
+
+--=====================TRIGGER================================
+--Q1 Tạo trigger TRIGGER_NKBH_INSERT cập nhật số lượng mặt hàng còn lại khi mặt hàng đó được bán (thêm mới vào bảng NKBH)
+ALTER TRIGGER TRIGGER_NKBH_INSERT ON tblNKBH
+AFTER INSERT
+AS
+BEGIN
+	UPDATE tblMATHANG SET SoLuong=A.SoLuong - B.SoLuong 
+	FROM tblMATHANG A, inserted B
+	WHERE A.MaHang=B.MaHang
+END
+
+--TEST
+SELECT * FROM tblNKBH
+SELECT * FROM tblMATHANG
+INSERT INTO tblNKBH (MaHang,SoLuong, GiaBan) VALUES ('H1', 5, 2000)
+SELECT * FROM tblNKBH
+SELECT * FROM tblMATHANG
+
+--Q2 Tạo trigger cập nhật lại số lượng mặt hàng khi cập nhật NKBH
+CREATE TRIGGER TRG_AfterUpdate_NKBH_SoLuong
+ON tblNKBH
+FOR UPDATE
+AS
+BEGIN
+	IF UPDATE (SoLuong)
+		UPDATE tblMATHANG SET SoLuong=A.SoLuong-(B.SoLuong - C.SoLuong)
+		FROM tblMATHANG A, inserted B, deleted C
+		WHERE A.MaHang = B.MaHang AND B.STT = C.STT
+END
+
+--TEST
+SELECT * FROM tblNKBH
+SELECT * FROM tblMATHANG
+UPDATE tblNKBH SET SoLuong = 5 WHERE STT = 1
+SELECT * FROM tblNKBH
+SELECT * FROM tblMATHANG
+
+DISABLE TRIGGER TRIGGER_NKBH_INSERT ON tblNKBH
+
+--Q3 Tạo trigger ràng buộc số lượng mặt hàng bán phải ít hơn hoặc bằng số lượng còn lại trong kho
+DISABLE TRIGGER TRIGGER_NKBH_INSERT ON tblNKBH
+CREATE TRIGGER TRG_NKBH_INSERT_SLBAN_SLTON
+ON TBLNKBH
+FOR INSERT
+AS 
+BEGIN
+	BEGIN TRANSACTION 
+		DECLARE @SLTON INT, @SLBAN INT
+		SELECT @SLTON = A.SoLuong FROM TBLMATHANG A
+		SELECT @SLBAN = B.SoLuong FROM inserted B 
+		IF(@SLBAN>@SLTON)
+			ROLLBACK TRANSACTION
+		ELSE
+			BEGIN
+				UPDATE tblMATHANG SET SoLuong=A.SoLuong - B.SoLuong 
+				FROM tblMATHANG A, inserted B
+				WHERE A.MaHang=B.MaHang
+				COMMIT
+			END
+END	
+
+--TEST
+SELECT * FROM tblNKBH
+SELECT * FROM tblMATHANG
+INSERT INTO tblNKBH (MaHang,SoLuong, GiaBan) VALUES ('H1',20,2000)
+SELECT * FROM tblNKBH
+SELECT * FROM tblMATHANG
+
+SELECT * FROM tblNKBH
+SELECT * FROM tblMATHANG
+DELETE FROM tblNKBH

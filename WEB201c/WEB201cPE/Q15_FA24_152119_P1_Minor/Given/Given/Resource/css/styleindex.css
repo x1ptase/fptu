@@ -1,0 +1,50 @@
+.container-fluid{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+/* nav */
+.menu{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.menu ul{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* content-left */
+.content-left{
+    width: 30%;
+}
+.content-left img{
+    width: 4%;
+    margin-right: 10px;
+}
+.content-left h4{
+    color: #0EC0C3;
+    background-color: #DFEDEC;
+    padding: 5px 4px;
+    margin: 0 0;
+}
+.box-content{
+    border: 1px solid #E3E6E7;
+    margin-bottom: 20px;
+}
+.box-content h4, p{
+    margin-left: 10px;
+}
+
+/* content-right */
+.content-right img{
+    display: flex;
+    justify-content: center;
+}

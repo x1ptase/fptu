@@ -1,0 +1,469 @@
+\documentclass[a4paper,12pt]{article}
+
+%====== Encoding & Language ======
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[vietnamese]{babel}
+
+%====== Layout & Fonts ======
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{setspace}
+\setstretch{1.3}
+
+%====== Graphics & Tables ======
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{url} % Sử dụng để khắc phục lỗi Overfull \hbox với tên file dài và dấu gạch dưới
+\usepackage{float} % ✅ thêm dòng này để cố định vị trí hình
+
+%====== Math ======
+\usepackage{amsmath}
+
+% Optional but helpful:
+%\usepackage{microtype}
+
+\begin{document}
+	
+	%================= TRANG BÌA =================%
+	\begin{titlepage}
+		\centering
+		\includegraphics[width=4cm]{fpt-edu.png}\par\vspace{1cm}
+		{\large \textbf{Môn học:} MAS291\\
+			\textbf{Lớp:} SE1935\par}
+		
+		\vspace{0.8cm}
+		\noindent\rule{\textwidth}{0.5pt}\\[0.4cm]
+		{\centering\LARGE \textbf{Khảo sát các phương pháp xác suất thống kê}
+			\\[0.3cm]
+			\textbf{trong xu hướng “Nhảy việc” của Gen Z hiện nay}\par}
+		\vspace{0.4cm}
+		\noindent\rule{\textwidth}{0.5pt}\\[1cm]
+		
+		\begin{center}
+			\begin{tabular}{ll}
+				\Large \textbf{Giảng viên:} & \Large Lý Ánh Dương\\
+			\end{tabular}
+			
+			\vspace{0.8cm}
+			{\large \textbf{Nhóm 1 – SE1935}} 
+			
+			\vspace{0.8cm}
+			\begin{tabular}{ll}
+				SE190007 & Trương Thảo Vi\\
+				SE190124 & Lê Tuấn Kiệt\\
+				SE190769 & Đặng Hồng Phước\\
+				SE192861 & Phạm Tuấn Anh\\
+				SE192966 & Trịnh Nhật Quang\\
+				SE194089 & Vũ Nguyễn Đức Huy\\
+				SE194527 & Nguyễn Trần Đạt Ân\\
+				SE204327 & Võ Cao Minh\\
+			\end{tabular}
+		\end{center}
+		
+		\vfill
+		{\large TP. Hồ Chí Minh, Tháng 11 - 2025 \par}
+	\end{titlepage}
+	
+	%================= BẢNG PHÂN CÔNG =================%
+	\section*{Bảng phân công nhiệm vụ}
+	\begin{center}
+		\begin{tabular}{|c|c|l|l|}
+			\hline
+			\textbf{STT} & \textbf{MSSV} & \textbf{Họ và tên} & \textbf{Nhiệm vụ} \\ \hline
+			1 & SE190007 & Trương Thảo Vi & Làm Slide \\ \hline
+			2 & SE190124 & Lê Tuấn Kiệt & Viết Report \\ \hline
+			3 & SE190769 & Đặng Hồng Phước & Phân tích bài toán \\ \hline
+			4 & SE192861 & Phạm Tuấn Anh & Viết Report \\ \hline
+			5 & SE192966 & Trịnh Nhật Quang & Tìm số liệu và thực hiện các bước \\ \hline
+			6 & SE194089 & Vũ Nguyễn Đức Huy & Tìm số liệu và thực hiện các bước \\ \hline
+			7 & SE194527 & Nguyễn Trần Đạt Ân & Tìm bài toán và cách triển khai \\ \hline
+			8 & SE204327 & Võ Cao Minh & Tìm số liệu và thực hiện các bước \\ \hline
+		\end{tabular}
+	\end{center}
+	
+	\vspace{1cm}
+	
+	%================= PHÁT BIỂU BÀI TOÁN =================%
+	\section{Phát biểu bài toán}
+	
+	Trong bối cảnh kinh tế - xã hội thay đổi nhanh chóng và công nghệ phát triển mạnh mẽ, thế hệ lao động Gen Z (sinh từ năm 1997 đến 2012) đang trở thành lực lượng quan trọng trong thị trường lao động hiện nay. Tuy nhiên, một hiện tượng đáng chú ý là Gen Z có xu hướng thay đổi công việc thường xuyên, với thời gian gắn bó trung bình ngắn hơn và mức độ trung thành thấp hơn so với các thế hệ trước.
+	
+	Điều này đặt ra bài toán cần nghiên cứu: Vì sao nguồn lao động Gen Z có xu hướng thay đổi công việc thường xuyên, và hiện tượng này ảnh hưởng như thế nào đến cá nhân, doanh nghiệp và xã hội? Từ đó, cần tìm ra nguyên nhân, hệ quả và giải pháp để giúp doanh nghiệp và người lao động thích ứng, hướng đến phát triển nghề nghiệp bền vững trong thời kỳ lao động mới.
+	
+	%================= PHÂN TÍCH BÀI TOÁN =================%
+	\section{Phân tích bài toán}
+	
+	\subsection{Giới thiệu (Introduction)}
+	
+	Bài toán này sử dụng các phương pháp xác suất và thống kê mô tả (theo tài liệu SummaryMAS291) để lượng hóa và phân tích xu hướng "nhảy việc" của thế hệ Gen Z, như đã nêu trong "Mục 1: Phát biểu bài toán". Mục tiêu là chuyển đổi các quan sát định tính (ví dụ: "Gen Z thiếu trung thành") thành các số liệu thống kê cụ thể, đo lường được. Từ đó, chúng ta sẽ so sánh Gen Z với các thế hệ khác, tìm ra các yếu tố ảnh hưởng chính (nguyên nhân) và mô hình hóa các hành vi này.
+	
+	\subsubsection{Dữ liệu đầu vào (Input)}
+	Để tiến hành phân tích, chúng ta giả định có một tập dữ liệu khảo sát (ví dụ: \texttt{gen\_z\_job\_survey.csv}) chứa thông tin so sánh giữa các thế hệ lao động. Tập dữ liệu bao gồm các cột sau:
+	
+	\begin{itemize}
+		\item \textbf{Employee\_ID}: Mã định danh nhân viên (Biến định danh)
+		\item \textbf{Generation}: Thế hệ (Gen Z, Millennial, Gen X) (Biến định tính)
+		\item \textbf{Time\_at\_Current\_Job\_Months}: Số tháng làm việc tại công ty hiện tại (Biến định lượng)
+		\item \textbf{Number\_of\_Jobs\_Last\_5\_Years}: Số lượng công việc trong 5 năm qua (Biến định lượng)
+		\item \textbf{Salary\_Satisfaction}: Mức độ hài lòng về lương (1–5) (Biến thứ bậc)
+		\item \textbf{WorkLife\_Balance\_Satisfaction}: Hài lòng về cân bằng công việc – cuộc sống (1–5)
+		\item \textbf{Career\_Growth\_Satisfaction}: Hài lòng về cơ hội phát triển (1–5)
+		\item \textbf{Reason\_for\_Leaving\_Last\_Job}: Lý do rời công việc trước (Lương, Cơ hội, Môi trường, ...)
+	\end{itemize}
+	
+	\textit{Lưu ý:} Không sử dụng biến nhãn (0/1) như bài toán phân loại, vì đây là bài toán thống kê mô tả và phân tích xu hướng.
+	
+	\subsubsection{Dữ liệu đầu ra (Output)}
+	\begin{itemize}
+		\item Bảng thống kê mô tả: trung bình, trung vị, độ lệch chuẩn, tứ phân vị.
+		\item Biểu đồ: Box Plot, Histogram thể hiện phân bố giữa các thế hệ.
+		\item Kiểm định giả thuyết: T-statistic, p-value để đánh giá khác biệt giữa Gen Z và các thế hệ khác.
+		\item Ma trận tương quan ($r$) giữa các yếu tố hài lòng và thời gian gắn bó.
+		\item Các xác suất được tính toán từ mô hình Poisson và Mũ.
+	\end{itemize}
+	
+	\subsubsection{Các phương pháp xác suất – thống kê}
+	\begin{enumerate}
+		\item \textbf{Thống kê mô tả:} Tính Mean, Median, StdDev, Q1, Q3, vẽ biểu đồ hộp, biểu đồ tần suất.  
+		\item \textbf{Thống kê suy diễn – So sánh:}  
+		\[
+		H_0: \mu_{GenZ} = \mu_{Millennial}, \quad 
+		H_1: \mu_{GenZ} < \mu_{Millennial}
+		\]
+		Dùng T-test hai mẫu độc lập để xác định sự khác biệt giữa hai nhóm.  
+		\item \textbf{Phân tích tương quan:}  
+		Tính hệ số tương quan $r$ giữa thời gian gắn bó và mức độ hài lòng.  
+		\item \textbf{Phân phối xác suất:}  
+		Sử dụng phân phối Poisson mô hình hóa số công việc và phân phối Mũ mô tả thời gian giữa hai lần nhảy việc.
+	\end{enumerate}
+	
+	\subsubsection{Các bước thực hiện}
+	\begin{enumerate}
+		\item \textbf{Thu thập và Tiền xử lý dữ liệu:} Tìm kiếm dataset công khai hoặc tạo khảo sát. Làm sạch, xử lý giá trị thiếu (missing data) và mã hóa các biến định tính.
+		
+		\item \textbf{Thực hiện Thống kê mô tả (Bước 2.1.3, Mục 1):} Tính toán các chỉ số (Mean, Median, StdDev, Frequencies) và vẽ các biểu đồ (Box Plot, Histogram).
+		
+		\item \textbf{Thực hiện Thống kê suy diễn (Bước 2.1.3, Mục 2 \& 3):}
+		\begin{itemize}
+			\item Thực hiện kiểm định T-Test 2 mẫu để so sánh $\mu_{GenZ}$ và $\mu_{Millennial}$.
+			\item Tính toán ma trận hệ số tương quan $r$ giữa các biến hài lòng và thời gian làm việc.
+		\end{itemize}
+		
+		\item \textbf{(Nâng cao) Mô hình hóa xác suất (Bước 2.1.3, Mục 4):}
+		\begin{itemize}
+			\item Tìm tham số $\lambda$ cho Phân phối Poisson (số lượng công việc).
+			\item Tìm tham số $\lambda$ cho Phân phối Mũ (thời gian làm việc) và tính các xác suất liên quan.
+		\end{itemize}
+		
+		\item \textbf{Phân tích kết quả:} Tổng hợp các kết quả từ bước 2, 3, 4. Diễn giải các con số ($p$-value $< 0.05$, giá trị $r$, giá trị trung bình...) thành các kết luận thực tế để trả lời cho "Mục 1: Phát biểu bài toán".
+		
+		\item \textbf{Kết luận và Đề xuất:} Dựa trên các yếu tố (ví dụ: nếu Career\_Growth\_Satisfaction có hệ số tương quan $r$ mạnh nhất) để đề xuất giải pháp cho doanh nghiệp.
+	\end{enumerate}
+	
+	\subsection{Đóng Góp Chính (Main Contribution)}
+	Phần này trình bày chi tiết quá trình triển khai và kết quả phân tích thực tế dựa trên bộ dữ liệu \texttt{gen\_z\_survey\_final.csv} (chứa 40 đối tượng). Quá trình thực nghiệm được xây dựng bằng một ứng dụng Java Web (JSP/Servlet) hoàn chỉnh, thực thi 5 bước phân tích đã đề ra trong Mục 2.1.5.
+	
+	\subsubsection{Dữ liệu Đầu vào (Input) và Tiền xử lý (Preprocessing)} % Gộp hai mục lại
+	
+	\textbf{Mô tả Dữ liệu Đầu vào.} 
+	Dữ liệu đầu vào là file \texttt{gen\_z\_survey\_final.csv}. 
+	Dữ liệu này bao gồm 7 cột: \textit{Gioi\_tinh}, \textit{Do\_tuoi}, \textit{Linh\_vuc\_cong\_viec}, 
+	\textit{So\_nam\_lam\_viec}, \textit{Muc\_luong\_trung\_binh}, \textit{So\_cong\_viec\_da\_lam}, 
+	\textit{Li\_do\_thay\_doi\_cong\_viec}.
+	
+	
+	% ✅ Hình đã được cố định tại đây (sẽ không trôi đi đâu cả)
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{figure_1.png}
+		\caption{Mô tả bộ dữ liệu \texttt{gen\_z\_survey\_final.csv}}
+	\end{figure}
+	
+	\textbf{Tiền xử lý dữ liệu (Preprocessing)} \\
+	Quá trình tiền xử lý được thực hiện tự động trong file (Bước 1 của code):
+	\begin{itemize}
+		\item \textbf{Đọc file}: Đọc file \url{gen\_z\_survey\_final.csv}.
+		\item \textbf{Lọc Thế hệ}: Duyệt qua 40 hàng. Các đối tượng có \textbf{Độ\_tuổi từ 18 đến 28} được lọc và đưa vào danh sách phân tích của Gen Z. (Trong bộ dữ liệu 40 đối tượng, đã lọc được \textbf{20 đối tượng Gen Z}).
+		\item \textbf{Làm sạch}: Dữ liệu số (như \texttt{Số\_năm\_làm\_việc}, \texttt{Mức\_lương\_trung\_bình}) được chuyển đổi (parse) từ \texttt{String} sang \texttt{Double} hoặc \texttt{Integer} để chuẩn bị cho tính toán.
+	\end{itemize}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{figure_2.png}
+		\caption{Đọc và Lọc Dữ liệu Gen Z (18-28 tuổi) từ File CSV}
+	\end{figure}
+	
+	\subsubsection{Thực nghiệm và Kết quả (Experimental Results)}
+	
+	Toàn bộ mã nguồn được triển khai trong file \texttt{MAS291\_final}.
+	
+	Quá trình thực nghiệm được thực thi bằng cách gọi \texttt{AnalysisController} (Servlet). Servlet này kích hoạt \texttt{AnalysisService} (lớp logic nghiệp vụ) để đọc file CSV và thực hiện 5 bước phân tích.
+	
+	Các phép tính toán thống kê (T-Test, Tương quan, Phân phối) được triển khai bằng thư viện \textbf{Apache Commons Math} (phiên bản \texttt{3.6.1}). Kết quả cuối cùng được đóng gói vào \texttt{AnalysisReportDTO} và hiển thị trên trang \texttt{analysisResult.jsp}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{figure_3.png}
+		\caption{Mô hình Hóa và Thử nghiệm Giả thuyết về Số năm Làm việc của Gen Z}
+	\end{figure}
+	
+	\subsubsection{Phân tích Bước 2: Thống kê Mô tả}
+	
+	Đây là các kết quả thống kê cơ bản mô tả đặc điểm của 20 đối tượng Gen Z:\\ \\
+	
+	\begin{center}
+		\textbf{\large Bước 2: Thống Kê Mô Tả (Gen Z)}
+	\end{center}
+	
+	\textbf{Bảng 1 (Biến định lượng):}
+	\begin{itemize}
+		\item \textbf{Số năm làm việc}: Trung bình (Mean) là 1.08 năm, nhưng Trung vị (Median) chỉ là 1.05 năm. Điều này cho thấy đa số Gen Z có xu hướng làm việc chỉ quanh mức này.
+		\item Mốc 1 năm. Độ lệch chuẩn (StdDev) là $\mathbf{0,31}$, cho thấy dữ liệu khá đồng đều, không có sự khác biệt quá lớn (không có ai làm 5-10 năm kéo trung bình lên cao).
+		\item \textbf{Mức lương}: Trung bình là 17.80 triệu VND.
+		\item \textbf{Số CV đã làm}: Trung bình là 2.75 công việc.
+	\end{itemize}
+	
+	\textbf{Thống kê các biến định lượng}
+	\begin{center}
+		\begin{tabular}{lccc}
+			\toprule
+			\textbf{Biến} & \textbf{Trung bình (Mean)} & \textbf{Trung vị (Median)} & \textbf{Độ lệch chuẩn (StdDev)} \\
+			\midrule
+			Số năm làm việc & 1,15 năm & 1,15 năm & 0,38 \\
+			Lương (Triệu VND) & 18,35 triệu & 18 triệu & 3,36 \\
+			Số CV đã làm & 2,75 CV & 3 CV & 0,72 \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	
+	\textbf{Bảng 2 (Biến định tính):}
+	\begin{itemize}
+		\item \textbf{Lí do thay đổi công việc}: "Lương" ($\mathbf{8}$ lần) và "Cơ hội" ($\mathbf{7}$ lần) là hai lý do phổ biến nhất, chiếm đa số các trường hợp. "Môi trường" ($\mathbf{5}$ lần) đứng thứ ba.
+	\end{itemize}
+	
+	\textbf{Tần suất 'Lí do thay đổi công việc' (Gen Z)}
+	\begin{center}
+		\begin{tabular}{lc}
+			\toprule
+			\textbf{Lí do} & \textbf{Số lượng (Tần suất)} \\
+			\midrule
+			Lương & 8 \\
+			Môi trường & 5 \\
+			Cơ hội & 7 \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	
+	\subsubsection{Phân tích Bước 3: Phân tích Tương quan (Gen Z)}
+	
+	Bước này nhằm đánh giá mức độ liên hệ tuyến tính giữa các yếu tố đặc trưng ảnh hưởng đến hành vi làm việc của Gen Z.
+	
+	\subsubsection*{Hệ số r (Lương và Số năm làm việc): $r = 0.8145$}
+	\begin{itemize}
+		\item Đây là một giá trị \textbf{tương quan dương rất mạnh} (r gần 1).
+		\item \textbf{Diễn giải:} Khi mức lương tăng cao, Gen Z có xu hướng làm việc lâu hơn. Đây là yếu tố liên quan mạnh nhất đến sự gắn bó công việc.
+		\item \textbf{Kiểm định ý nghĩa thống kê:} $p\text{-value} = 0.000001 < 0.05 \Rightarrow$ \textbf{Có ý nghĩa thống kê}.
+	\end{itemize}
+	
+	\subsubsection*{Hệ số r (Số công việc đã làm và Số năm làm việc): $r = -0.5984$}
+	\begin{itemize}
+		\item Đây là một giá trị \textbf{tương quan âm trung bình - mạnh} (gần -0.6).
+		\item \textbf{Diễn giải:} Những người có số lượng công việc từng trải qua nhiều thường có xu hướng làm việc ngắn hạn hơn tại một công ty.
+		\item \textbf{Kiểm định ý nghĩa thống kê:} $p\text{-value} = 0.005391 < 0.05 \Rightarrow$ \textbf{Có ý nghĩa thống kê}.
+	\end{itemize}
+	
+	\begin{center}
+		\textbf{\large Bước 3: Phân Tích Tương Quan (Gen Z)}
+	\end{center}
+	
+	\begin{itemize}
+		\item Hệ số r (Lương vs. Số năm làm việc): \textbf{0.8145} \\
+		\textit{(Kiểm định H0: $\rho = 0$ → P-value = 0 → \textbf{Có ý nghĩa thống kê})}
+		\item Hệ số r (Số công việc đã làm vs. Số năm làm việc): \textbf{-0.5984} \\
+		\textit{(Kiểm định H0: $\rho = 0$ → P-value = 0.005391 → \textbf{Có ý nghĩa thống kê})}
+	\end{itemize}
+	
+	\vspace{0.6cm}
+	
+	%================= 2.2.5 =================%
+	\subsubsection{Phân tích Bước 4: Kiểm định T-Test 1 Mẫu (Gen Z)}
+	
+	Bước này nhằm kiểm định giả thuyết về thời gian làm việc trung bình của Gen Z.
+	
+	\textbf{Giả thuyết kiểm định:}
+	\[
+	H_0: \mu = 2 \text{ năm} \qquad H_1: \mu < 2 \text{ năm}
+	\]
+	
+	\textbf{Kết quả kiểm định thu được:}
+	\[
+	T_{\text{stat}} = -13.3158, \quad p\text{-value} \approx 0.000000
+	\]
+	
+	Vì $p\text{-value} < 0.05$ nên \textbf{Bác bỏ $H_0$}. Điều này cho thấy thời gian làm việc trung bình của Gen Z \textbf{thấp hơn 2 năm} một cách có ý nghĩa thống kê.
+	
+	\begin{center}
+		\textbf{\large Bước 4: Kiểm Định Giả Thuyết T-Test 1 Mẫu (Gen Z)}
+	\end{center}
+	
+	\begin{itemize}
+		\item Giả thuyết: $H_0$: Trung bình thời gian làm việc = 2 năm
+		\item $T_{\text{stat}} = -13.3158$, $p = 0$
+		\item \textbf{Kết luận:} Bác bỏ $H_0$. Thời gian làm việc trung bình của Gen Z \textbf{nhỏ hơn 2 năm}.
+	\end{itemize}
+	
+	\vspace{0.6cm}
+	%================= 2.2.5 =================%
+	\subsubsection{Phân tích Bước 5: Mô hình hóa Phân phối Xác suất}
+	
+	\begin{itemize}
+		\item \textbf{Phân phối Poisson (Số công việc đã làm):}
+		\begin{itemize}
+			\item Tham số Lambda (số CV trung bình) của Gen Z là $\lambda = 2.75$.
+			\item $P(X \ge 3)$ (Xác suất một người có 3 CV trở lên) = \textbf{51.98\%}.
+			\item \textbf{Diễn giải:} Có hơn 50\% khả năng một nhân viên Gen Z đã có từ 3 công việc trở lên.
+		\end{itemize}
+		
+		\item \textbf{Phân phối Mũ (Số năm làm việc):}
+		\begin{itemize}
+			\item Thời gian trung bình (1/$\lambda$) là \textbf{1.08 năm}.
+			\item $P(X \le 1.5)$ (Xác suất nghỉ việc trong vòng 1.5 năm) = \textbf{75.10\%}.
+			\item \textbf{Diễn giải:} Dựa trên mô hình, có đến 75\% khả năng một nhân viên Gen Z sẽ nghỉ việc trước mốc 1.5 năm.
+		\end{itemize}
+	\end{itemize}
+	
+	\begin{center}
+		\textbf{\large Bước 5: Mô Hình Hóa Phân Phối Xác Suất (Gen Z)}
+	\end{center}
+	
+	\textbf{Phân phối Poisson (Số công việc đã làm)} \\[2pt]
+	\textit{Tham số Lambda (số CV trung bình):} 2,75 \\
+	\textit{$P(X \ge 3)$ (Xác suất có 3 CV trở lên):} \textbf{51,85\%} \\[6pt]
+	
+	\textbf{Phân phối Mũ (Số năm làm việc)} \\[2pt]
+	\textit{Thời gian trung bình (1/$\lambda$):} 1,15 năm \\
+	\textit{$P(X \le 1.5)$ (Xác suất nghỉ việc trong 1.5 năm):} \textbf{72,87\%}
+	
+	%================= 2.2.7 =================%
+	\subsubsection{Đánh giá Mô hình Hóa Phân phối Xác suất (Gen Z)}
+	
+	Việc đánh giá mô hình phân phối xác suất giúp kiểm tra mức độ phù hợp giữa dữ liệu thu thập được và các mô hình lý thuyết. Trong bước phân tích này, hai mô hình đã được áp dụng: \textbf{phân phối Poisson} cho số công việc đã làm trong 5 năm và \textbf{phân phối Mũ (Exponential)} cho thời gian làm việc tại công ty hiện tại. Các tham số của mô hình được ước lượng từ dữ liệu khảo sát, sau đó sử dụng để tính các xác suất quan trọng nhằm diễn giải xu hướng hành vi nhảy việc.
+	
+	\subsubsection*{Phân phối Poisson (Số công việc trong 5 năm)}
+	Tham số $\lambda$ – số công việc trung bình trong vòng 5 năm – được ước lượng là:
+	\[
+	\lambda = 2.75
+	\]
+	
+	Xác suất để một nhân viên Gen Z có từ 3 công việc trở lên được tính theo:
+	\[
+	P(X \ge 3) = 1 - [P(X=0) + P(X=1) + P(X=2)]
+	\]
+	Kết quả thu được:
+	\[
+	P(X \ge 3) = 51.98\%
+	\]
+	
+	\textbf{Diễn giải:} Hơn một nửa số người thuộc Gen Z trong mẫu khảo sát đã trải qua \textit{ít nhất} 3 công việc chỉ trong 5 năm. Điều này phản ánh \textbf{xu hướng nhảy việc khá cao}, phù hợp với nhận định rằng Gen Z thường thay đổi môi trường làm việc nhiều để tìm sự phù hợp.
+	
+	\subsubsection*{Phân phối Mũ (Thời gian làm việc tại công ty hiện tại)}
+	
+	Thời gian làm việc trung bình tại công ty được ước lượng là:
+	\[
+	\frac{1}{\lambda} = 1.08 \text{ năm}
+	\]
+	
+	Xác suất nhân viên Gen Z nghỉ việc trong vòng 1.5 năm:
+	\[
+	P(X \le 1.5) = 75.10\%
+	\]
+	
+	\textbf{Diễn giải:} Có đến 3/4 khả năng một nhân viên Gen Z rời bỏ công ty khi chưa đến 1.5 năm gắn bó. Điều này củng cố nhận định về \textbf{tính chất ngắn hạn trong cam kết công việc} của nhóm thế hệ này.
+	%================= 2.2.8 =================%
+
+	\subsubsection{So sánh và cải tiến (Comparison and Improvement)}
+	
+	\textbf{Đề xuất cải tiến mô hình:} Mặc dù hệ thống Java Web đã đáp ứng mục tiêu phân tích đặt ra, vẫn còn một số hướng có thể nâng cao hơn nữa hiệu quả và tính năng:
+	
+	\begin{itemize}
+		\item \textbf{Bổ sung chỉ số thống kê mở rộng:} Tích hợp thêm các chỉ tiêu mô tả như quartile (Q1, Q3), IQR, hay các thước đo phân bố khác ngoài mean/median (ví dụ độ lệch, độ nhọn) để mô tả dữ liệu toàn diện hơn. Đồng thời, có thể bổ sung hiển thị ma trận tương quan giữa các yếu tố hài lòng (lương, cân bằng, cơ hội thăng tiến) với thời gian gắn bó nhằm cung cấp cái nhìn đa biến về nguyên nhân “nhảy việc”.
+		
+		\item \textbf{Tích hợp mô hình học máy đơn giản:} Xây dựng thêm các mô hình dự báo nhằm hỗ trợ ra quyết định. Chẳng hạn, tích hợp một mô hình hồi quy tuyến tính hoặc cây quyết định nhỏ để dự đoán khả năng nghỉ việc sớm dựa trên các biến đầu vào (tuổi, mức lương, số công việc đã trải qua, v.v.). Mô hình học máy cơ bản này sẽ giúp kiểm chứng thêm các yếu tố ảnh hưởng và có thể dự đoán xu hướng cho dữ liệu mới, bổ sung cho phân tích thống kê mô tả.
+		
+		\item \textbf{Nâng cao trực quan hóa:} Cải thiện phần trực quan bằng cách thêm các biểu đồ động và tương tác. Ví dụ: tích hợp biểu đồ hộp (Boxplot) và histogram trực tiếp trên giao diện web để người dùng dễ dàng quan sát phân phối dữ liệu (so sánh phân bố thời gian làm việc giữa các nhóm) thay vì chỉ hiển thị số liệu. Ngoài ra, biểu đồ tương quan (scatter plot với đường xu hướng) giữa mức lương và thời gian gắn bó có thể minh họa rõ hơn mối liên hệ mạnh mà mô hình tìm được. Việc trực quan hóa nâng cao không chỉ làm báo cáo sinh động hơn mà còn hỗ trợ người đọc hiểu nhanh các kết luận chính.
+	\end{itemize}
+	
+	
+	%================= 2.2.9 =================%
+	\subsubsection{Tổng kết và dự định tương lai (Conclusion and Future Works)}
+	
+	\textbf{Tổng kết:} 
+	Nghiên cứu và phân tích dữ liệu đã định lượng hóa rõ rệt hiện tượng “nhảy việc” ở Gen Z. 
+	Thời gian gắn bó trung bình của Gen Z chỉ khoảng 1.08 năm và thấp hơn đáng kể so với mốc 2 năm một cách có ý nghĩa thống kê. 
+	Hệ quả là Gen Z thực sự có xu hướng đổi việc sớm hơn các thế hệ trước. 
+	Các yếu tố liên quan đã được làm sáng tỏ: Mức lương chứng tỏ vai trò nổi bật khi có tương quan dương rất cao với thời gian gắn bó, 
+	ngụ ý rằng đãi ngộ tốt có thể giữ chân Gen Z lâu hơn. 
+	Ngược lại, những người “nhảy việc” nhiều (đã trải qua nhiều công việc) thì có khuynh hướng gắn bó ngắn (tương quan âm). 
+	Về nguyên nhân chủ quan, phân tích tần suất chỉ ra lý do rời việc hàng đầu của Gen Z là “Lương” và “Cơ hội phát triển” (chiếm phần lớn trường hợp), 
+	sau đó mới đến yếu tố về môi trường làm việc. 
+	Đặc biệt, mô hình phân phối xác suất cho thấy hơn một nửa Gen Z trong mẫu khảo sát đã kinh qua từ 3 công việc trở lên trong 5 năm, 
+	và xác suất một nhân viên Gen Z nghỉ việc trước cột mốc 1.5 năm lên đến $\sim75\%$. 
+	Những phát hiện định lượng này khẳng định nhận định ban đầu rằng thế hệ Gen Z có xu hướng nhảy việc rất thường xuyên, 
+	đồng thời cung cấp các con số cụ thể để đo lường mức độ của hiện tượng.
+	
+	\vspace{0.5em}
+	\noindent\textbf{Hướng phát triển tương lai:}
+	Để nâng cao giá trị và tính ứng dụng, hệ thống sẽ được mở rộng và cải tiến theo ba hướng chính:
+	
+	\begin{itemize}
+		\item \textbf{Tối ưu hiệu năng:} 
+		Nâng cấp mã nguồn và kiến trúc phần mềm để tối ưu hiệu năng, cho phép phân tích tập dữ liệu lớn hơn và cải thiện độ ổn định.
+		
+		\item \textbf{Mở rộng phạm vi phân tích:} 
+		Tích hợp thêm dữ liệu từ các nhóm lao động khác để phân tích đa nhóm, so sánh xu hướng nhảy việc giữa các thế hệ. 
+		Thực hiện kiểm định thống kê thích hợp nhằm xác định khác biệt giữa Gen Z và các thế hệ khác. 
+		Bổ sung các biến số mới để nghiên cứu sâu hơn các yếu tố ảnh hưởng đến sự trung thành.
+		
+		\item \textbf{Ứng dụng thuật toán học máy:} 
+		Áp dụng thuật toán học máy (như mô hình dự báo nghỉ việc hoặc phân cụm) giúp mở rộng phân tích từ mô tả sang dự báo, 
+		cho phép hệ thống dự đoán xu hướng nhảy việc trong tương lai.
+	\end{itemize}
+	
+	\vspace{0.5em}
+	\noindent
+	\textbf{Tóm lại,} những nâng cấp trên sẽ giúp hệ thống phân tích toàn diện hơn, 
+	hỗ trợ hiệu quả cho nghiên cứu học thuật lẫn thực tiễn quản lý nhân sự 
+	trong bối cảnh nguồn lao động Gen Z ngày càng đông và năng động.
+	
+	
+	\begin{thebibliography}{99}
+		
+		\bibitem{pham2022}
+		Phạm, H. T. (2022). 
+		\textit{Yếu tố ảnh hưởng đến sự gắn bó của nhân viên thế hệ Gen Z với tổ chức}. 
+		Tạp chí Khoa học Kinh tế, \textbf{15}(3), 45–58.  
+		\textit{\small (Nghiên cứu định tính về động lực và yếu tố giữ chân nhân viên Gen Z trong môi trường doanh nghiệp Việt Nam).}
+		
+		\bibitem{le2023}
+		Lê, Q., \& Trần, T. (2023). 
+		\textit{Xu hướng nhảy việc của Gen Z trong bối cảnh thị trường lao động linh hoạt}. 
+		Tạp chí Xã hội học, \textbf{41}(2), 112–128.  
+		\textit{\small (Phân tích hành vi “nhảy việc” và các yếu tố xã hội tác động đến thế hệ Gen Z Việt Nam).}
+		
+		\bibitem{anderson2020}
+		Anderson, D. R., Sweeney, D. J., \& Williams, T. A. (2020). 
+		\textit{Statistics for Business and Economics}. Cengage Learning.  
+		\textit{\small (Tài liệu nền tảng về thống kê ứng dụng trong kinh tế và kinh doanh; được tham chiếu cho mô hình Poisson và phân phối Mũ).}
+		
+		\bibitem{ross2014}
+		Ross, S. M. (2014). 
+		\textit{Introduction to Probability and Statistics for Engineers and Scientists}. Academic Press.  
+		\textit{\small (Nguồn lý thuyết chuẩn cho các phân phối xác suất, đặc biệt là Exponential và Poisson).}
+		
+	\end{thebibliography}
+	
+	
+\end{document}

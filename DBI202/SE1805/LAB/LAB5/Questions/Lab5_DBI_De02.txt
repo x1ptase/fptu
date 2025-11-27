@@ -1,0 +1,16 @@
+Câu 1: Procedure
+Viết thủ tục usp_XoaKhachHang nhận vào mã khách hàng (MAKH) và xóa khách hàng đó khỏi bảng KHACHHANG nếu họ không có hóa đơn nào.
+
+Câu 2: Procedure
+Viết thủ tục CapNhatGiaSanPham nhận vào mã sản phẩm (MASP) và giá mới, sau đó cập nhật giá trong bảng SANPHAM.
+
+Câu 3: Function
+Viết một hàm fn_TinhTongDoanhSoKH nhận vào mã khách hàng (MAKH) và trả về tổng doanh số của khách hàng đó tính từ bảng HOADON
+
+Câu 4: Function
+Tạo một function fn_TongSoLuongSPDaBan nhận vào mã sản phẩm (MASP) và trả về tổng số lượng sản phẩm đó đã bán được từ bảng CTHD.
+
+Câu 5: Trigger
+Viết trigger trigger_CapNhatDoanhSo tự động cập nhật doanh số của khách hàng trong bảng KHACHHANG khi thêm một hóa đơn mới.
+
+
