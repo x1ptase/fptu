@@ -1,0 +1,84 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; 
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #17a2b8;
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #17a2b8;
+    font-size: 2em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    table-layout: fixed; /* QUAN TRỌNG: Cố định bố cục bảng để căn lề đúng */
+    font-size: 0.95em;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top; /* QUAN TRỌNG: Căn nội dung lên đầu */
+    word-wrap: break-word; /* Cho phép ngắt từ nếu từ quá dài */
+}
+
+/* ĐỊNH DẠNG CỘT */
+.no-col {
+    width: 5%; 
+    text-align: center;
+    font-weight: bold;
+    background-color: #f1f1f1;
+}
+.question-col {
+    width: 45%; 
+}
+.answer-col {
+    width: 50%; 
+}
+
+/* ĐỊNH DẠNG HEADER VÀ ROWS */
+thead th {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: 700;
+}
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* ĐỊNH DẠNG CODE VÀ PRE */
+.answer-col pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 10px;
+    overflow-x: auto; /* Thêm thanh cuộn cho code quá dài */
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.answer-col code {
+    background-color: #f0f0f0;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+}
