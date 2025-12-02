@@ -1,73 +1,31 @@
-import java.util.Scanner;
 
 public class Tester {
+
     public static void main(String[] args) {
-        MyDLL lst = new MyDLL();
-        Scanner inp = new Scanner(System.in);
-        String inputLine;
+        LuxuryStore lx = new LuxuryStore();
+        Jewelry L1 = new Jewelry("10K", 14.5, 1.4, 2);
+        Jewelry L2 = new Jewelry("14K", 24.6, 1.8, 0);
+        Jewelry L3 = new Jewelry("18K", 66.7, 1.7, 4);
+        Jewelry L4 = new Jewelry("24K", 0, 1.6, 2);
+        Jewelry L5 = new Jewelry("9999", 160, 1.0, 10);
         
-        System.out.print("Enter number of Cars: ");
-        int n = 0;
-        try {
-            n = Integer.parseInt(inp.nextLine().trim());
-        } catch (NumberFormatException e) {
-            System.out.println("Invalid number of cars. Exiting.");
-            return;
-        }
-
-        for (int i = 0; i < n; i++) {
-            System.out.println("\n--- Car " + (i + 1) + " ---");
-            
-            System.out.print("ID: ");
-            String id = inp.nextLine().trim();
-            
-            System.out.print("Brand: ");
-            String brand = inp.nextLine().trim();
-            
-            String color;
-            while (true) {
-                System.out.print("Color (Red, Blue, White): ");
-                color = inp.nextLine().trim();
-                if (color.equalsIgnoreCase("Red") || 
-                    color.equalsIgnoreCase("Blue") || 
-                    color.equalsIgnoreCase("White")) {
-                    break;
-                } else {
-                    System.out.println("Invalid color!!!! Color must be Red, Blue, or White.");
-                }
-            }
-            
-            int exp;
-            while (true) {
-                System.out.print("Exp (2020-2030): ");
-                inputLine = inp.nextLine().trim();
-                try {
-                    exp = Integer.parseInt(inputLine);
-                    if (exp >= 2020 && exp <= 2030) {
-                        break;
-                    } else {
-                        System.out.println("Invalid exp!!1 Exp must be between 2020 and 2030.");
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("Invalid number!!!1 Please enter a valid year.");
-                }
-            }
-
-            Car car = new Car(id, brand, color, exp);
-            lst.addLast(car);
-        }
+        lx.addFirst(L1);
+        lx.addFirst(L2);
+        lx.addFirst(L3);
+        lx.addFirst(L4);
+        lx.addFirst(L5);
         
-        System.out.println("\n====== Before remove ======");
-        lst.traverse();
-
-        lst.removeFirstRed();
-        lst.removeLastToyota();
-
-        System.out.println("\n====== After remove ======");
-        lst.traverse();
-
-        lst.countByColor("Red"); 
+//        lx.addLast(L1);
+//        lx.addLast(L2);
+//        lx.addLast(L3);
+//        lx.addLast(L4);
+//        lx.addLast(L5);
         
-        inp.close();
+        lx.removeFirst();
+        lx.removeLast();
+        
+        System.out.println("Size = " + lx.size);
+        
+        lx.traverse();
     }
 }

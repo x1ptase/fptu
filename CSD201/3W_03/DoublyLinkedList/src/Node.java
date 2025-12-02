@@ -1,13 +1,15 @@
-public class Node {
-    Car info;
+public class Node{
+    Jewelry info;
     Node prev, next;
-    
-    public Node(){
+
+    public Node() {
+    }
+
+    public Node(Jewelry info, Node prev, Node next) {
+        this.info = info;
+        this.prev = prev;
+        this.next = next;
     }
     
-    public Node(Car info, Node prev, Node next){
-        this.info=info;
-        this.prev=prev;
-        this.next=next;
-    }
+    
 }
