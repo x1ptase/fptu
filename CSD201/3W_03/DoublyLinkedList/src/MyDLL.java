@@ -1,8 +1,8 @@
-public class MyDList {
+public class MyDLL {
     Node header, trailer;
     int size;
 
-    public MyDList() {
+    public MyDLL() {
         header=trailer = null;
         size=0;
     }
