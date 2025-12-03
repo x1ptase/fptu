@@ -87,6 +87,7 @@ public class LuxuryStore {
     }
 
     public double totaldAsset(List<Jewelry> jewelryList) {
+        /// total = price * (size + quantity)
         double total = 0;
         for (Jewelry j : jewelryList) {
             total += j.getPrice() * (j.getSize() + j.getQuantity());
