@@ -100,15 +100,15 @@ class CLL {
     public CLL() {
         tail = null;
     }
-    
-    public boolean isEmpty(){
+
+    public boolean isEmpty() {
         return tail == null;
     }
 
     public void addFirst(Jewelry j) {
         // no condition
         Node p = new Node(j, null);
-        if(isEmpty()){
+        if (isEmpty()) {
             tail = p;
             p.next = tail;
         } else {
@@ -120,7 +120,7 @@ class CLL {
     public void addLast(Jewelry j) {
         // no condition
         Node p = new Node(j, null);
-        if(isEmpty()){
+        if (isEmpty()) {
             tail = p;
             p.next = tail;
         } else {
@@ -130,9 +130,9 @@ class CLL {
         }
     }
 
-    public double totalQuality(List<Jewelry> jewelryList) {
+    public double totalQuatity(List<Jewelry> jewelryList) {
         //Tinh tong so luong (quality) toan bo trang suc
-        //co trong Store (Total quality)
+        //co trong Store (Total quatity)
         double total = 0;
         for (Jewelry j : jewelryList) {
             total += j.getQuantity();
@@ -140,15 +140,37 @@ class CLL {
         return total;
     }
 
+    public DLL sortAscByPrice(List<Jewelry> jewelryList) {
+        // sap xep cac phan tu trong danh sach
+        // tang dan theo PRICE
+        DLL newList = new DLL();
+
+        for (int i = 0; i < jewelryList.size() - 1; i++) {
+            for (int j = 0; j < jewelryList.size() - i - 1; j++) {
+                if (jewelryList.get(j).getPrice() > jewelryList.get(j + 1).getPrice()) {
+                    Jewelry tmp = jewelryList.get(j);
+                    jewelryList.set(j, jewelryList.get(j + 1));
+                    jewelryList.set(j + 1, tmp);
+                }
+            }
+        }
+
+        for (Jewelry j : jewelryList) {
+            newList.addLast(j);
+        }
+
+        return newList;
+    }
+
     public void traverse() {
-       if(isEmpty()){
+        if (isEmpty()) {
             return;
         }
         Node p = tail.next;
         do {
-            System.out.println(p.info); 
-            p = p.next; 
-        } while (p != tail.next); 
+            System.out.println(p.info);
+            p = p.next;
+        } while (p != tail.next);
     }
 }
 
