@@ -13,16 +13,16 @@ public class Tester {
         Jewelry L4 = new Jewelry("24K", 0, 1.6, 2);
         Jewelry L5 = new Jewelry("9999", 1, 1.0, 3);
 
-//        lx.cList.addFirst(L1);
-//        lx.cList.addFirst(L2);
-//        lx.cList.addFirst(L3);
-//        lx.cList.addFirst(L4);
-//        lx.cList.addFirst(L5); 
-        lx.cList.addLast(L1);
-        lx.cList.addLast(L2);
-        lx.cList.addLast(L3);
-        lx.cList.addLast(L4);
-        lx.cList.addLast(L5);
+        lx.cList.addFirst(L1);
+        lx.cList.addFirst(L2);
+        lx.cList.addFirst(L3);
+        lx.cList.addFirst(L4);
+        lx.cList.addFirst(L5); 
+//        lx.cList.addLast(L1);
+//        lx.cList.addLast(L2);
+//        lx.cList.addLast(L3);
+//        lx.cList.addLast(L4);
+//        lx.cList.addLast(L5);
 
         List<Jewelry> jewelryList = new ArrayList<>();
         jewelryList.add(L1);
