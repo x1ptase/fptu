@@ -1,12 +1,45 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author x1pta
- */
 public class Course {
-    
+    private String courseName;
+    private int semester; // [1-9]
+    private String campus; // [HN HCM DN QN CT]
+
+    public Course(String courseName, String campus) {
+        this.courseName = courseName;
+        this.campus = campus;
+    }
+
+    public Course(String courseName, int semester, String campus) {
+        this.courseName = courseName;
+        this.semester = semester;
+        this.campus = campus;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public int getSemester() {
+        return semester;
+    }
+
+    public void setSemester(int semester) {
+        this.semester = semester;
+    }
+
+    public String getCampus() {
+        return campus;
+    }
+
+    public void setCampus(String campus) {
+        this.campus = campus;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" + "courseName=" + courseName + ", semester=" + semester + ", campus=" + campus + '}';
+    }
 }
