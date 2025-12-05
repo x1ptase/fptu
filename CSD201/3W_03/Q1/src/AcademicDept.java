@@ -27,7 +27,7 @@ class MySLL {
     public void addLast(String cName, String campus, int credit) {
         // Add courses with 3 attributes
         Course course = new Course(cName, campus, credit);
-        
+
         Node p = new Node(course, null);
         if (head == null) {
             head = tail = p;
@@ -51,8 +51,32 @@ class MySLL {
 
     public MySLL sortCourseByCreditDesc() {
         // Sort courses following credit desc
-        
-        return null;
+        if (head == null || head.next == null) {
+            return this;
+        }
+        Node current = head;
+        while (current != null) {
+            Node maxNode = current;
+            Node p = current.next;
+
+            while (p != null) {
+                int currentMaxCredit = maxNode.info.getCredit();
+                int pCredit = p.info.getCredit();
+                
+                if (pCredit > currentMaxCredit) {
+                    maxNode = p; 
+                }
+                p = p.next;
+            }
+
+            if (maxNode != current) {
+                Course tmp = current.info;
+                current.info = maxNode.info;
+                maxNode.info = tmp;
+            }
+            current = current.next; 
+        }
+        return this; 
     }
 
     public void traverse() {
@@ -74,10 +98,28 @@ class MyCLL {
 
     public void addLast(String courName, int semester, String campus) {
         // Add
+        Course course = new Course(courName, semester, campus);
+        Node p = new Node(course, null);
+        
+        if(tail == null){
+            tail = p;
+            tail.next = tail;
+        } else{
+            p.next = tail.next;
+            tail.next = p;
+            tail = p;
+        }
     }
 
     public void traverse() {
-
+        if (tail == null) {
+            return;
+        }
+        Node p = tail.next;
+        do {
+            System.out.println(p.info);
+            p = p.next;
+        } while (p != tail.next);
     }
 }
 
@@ -90,12 +132,29 @@ class MyDLL {
     }
 
     public void addFirst(Course course) {
-
+        Node p = new Node(course);
+        if(header == null){
+            header = trailer = p;
+        } else{
+            p.next = header;
+            header.prev = p;
+            header = p;
+        }
     }
 
     public Node removeLast() {
-
-        return null;
+        if(header == null){
+            return null;
+        } 
+        Node p = trailer;
+        if(header == trailer){
+            header = trailer = null;
+        } else{
+            trailer = trailer.prev;
+            trailer.next = null;
+            p.prev = null;
+        }
+        return p;
     }
 
     public void traverse() {
@@ -108,7 +167,15 @@ class MyDLL {
 
     public int countCourserByCampus(String campus) {
         int count = 0;
-
+        Node p = header;
+        String formatCampus = campus.toUpperCase();
+        
+        while(p != null){
+            if(p.info.getCampus().toUpperCase().equals(formatCampus)){
+                count++;
+            }
+            p = p.next;
+        }
         return count;
     }
 }
