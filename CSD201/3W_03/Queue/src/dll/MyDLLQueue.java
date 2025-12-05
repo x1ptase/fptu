@@ -12,7 +12,7 @@ public class MyDLLQueue {
     public void enqueue(char c){
         // addFirst
         Node p = new Node(c);
-        if(front == null){
+        if(front == null && rear == null){
             front = rear = p;
         } else{
             p.next = front;
@@ -23,7 +23,7 @@ public class MyDLLQueue {
     
     public Node dequeue(){
         // removeLast
-        if(front == null){
+        if(front == null && rear == null){
             return null;
         }
         Node p = rear;
@@ -57,9 +57,10 @@ public class MyDLLQueue {
     
     public Node front(){
         // return the front element without remove
+        Node p = rear;
         if(front == null){
             return null;
         }
-        return rear;
+        return p;
     }
 }
