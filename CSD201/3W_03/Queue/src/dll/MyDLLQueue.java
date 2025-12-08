@@ -9,7 +9,7 @@ public class MyDLLQueue {
         front = rear = null;
     }
     
-    public void enqueue(char c){
+    public void enqueue(String c){
         // addFirst
         Node p = new Node(c);
         if(front == null && rear == null){

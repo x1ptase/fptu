@@ -5,10 +5,10 @@ public class Tester {
     public static void main(String[] args) {
         MyDLLQueue dq = new MyDLLQueue();
         
-        dq.enqueue('A');
-        dq.enqueue('B');
-        dq.enqueue('C');
-        dq.enqueue('D');
+        dq.enqueue("A");
+        dq.enqueue("B");
+        dq.enqueue("C");
+        dq.enqueue("D");
 
         dq.dequeue();
 //        dq.dequeue();
