@@ -27,9 +27,7 @@ public class Course {
         this.campus = campus;
         this.credit = credit;
     }
-    
-    
-    
+
     public String getCourseName() {
         return courseName;
     }

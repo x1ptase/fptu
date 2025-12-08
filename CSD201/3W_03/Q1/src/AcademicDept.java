@@ -187,25 +187,58 @@ class MyStack {
     public MyStack() {
         top = null;
     }
+    
+    public boolean isEmpty(){
+        return top == null;
+    }
 
     public void push(String courseName, int semester, String campus) {
         // Add courses into Stack with 3 attributes
+        Course course = new Course(courseName, semester, campus);
+        Node p = new Node(course, null);
+        p.next = top;
+        top = p;
     }
 
     public Node top() {
-
-        return null;
+        if(top == null){
+            return null;
+        }
+        return top;
     }
 
     public Node pop() {
-        return null;
+        if(top == null){
+            return null;
+        }
+        Node p = top;
+        top = top.next;
+        p.next = null;
+        return p;
+    }
+    
+    private void push(Course course) {
+        Node p = new Node(course);
+        p.next = top;
+        top = p;
     }
 
     public MyStack sortCourseNameByAsc() {
-        // Sort courses following Name asc
-
-        return null;
+    // Sort courses following Name asc
+    MyStack sortedStack = new MyStack();
+    
+    while(!isEmpty()) {
+        Node temp = this.pop();
+        while(!sortedStack.isEmpty() && 
+               sortedStack.top.info.getCourseName().compareToIgnoreCase(temp.info.getCourseName()) > 0){
+            Node largerNode = sortedStack.pop(); 
+            this.push(largerNode.info); 
+        }
+        sortedStack.push(temp.info); 
     }
+    
+    return sortedStack;
+}
 
     public void traverse() {
         Node p = top;
