@@ -48,7 +48,17 @@ class sll{
             return;
         }
         Node p = new Node(event, null);
-        
+
+        // TH 1: = 0
+        if(pos == 0){
+            if(isEmpty()){
+                head = tail = p;
+            } else{
+                p.next = head;
+                head = p;
+            }
+        }
+        // TH 2: > 0
         
     }
               
@@ -128,7 +138,7 @@ class MyStack{
     
     public int countEventByLocation(String location){
         int count = 0;
-        if(location == null){
+        if(location == null || location.trim().isEmpty()){
             return 0;
         }
         Node p = top;
