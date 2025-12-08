@@ -9,8 +9,4 @@ public class Node {
         this.info = info;
         this.next = next;
     }
-    
-    public Node(Event info){
-        this.info = info;
-    }
 }
