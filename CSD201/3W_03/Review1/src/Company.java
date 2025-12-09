@@ -1,4 +1,6 @@
 
+
+
 public class Company {
     sll sList = new sll();
     MyStack myStack = new MyStack();
@@ -48,7 +50,6 @@ class sll{
             return;
         }
         Node p = new Node(event, null);
-
         // TH 1: = 0
         if(pos == 0){
             if(isEmpty()){
@@ -59,7 +60,22 @@ class sll{
             }
         }
         // TH 2: > 0
+        Node current = head;
+        int index = 0;
+        while(current != null && index < pos - 1){
+            current = current.next;
+            index++;
+        }
         
+        if(current == null){
+            return;
+        }
+        p.next = current.next;
+        current.next = p;
+
+        if (p.next == null) {
+            tail = p;
+        }
     }
               
     public Node removeFirst(){
@@ -76,9 +92,29 @@ class sll{
     }
     
     public sll SortByMonthAsc(){
-        
-        return null;
-    }
+        if(head == null || head.next == null){
+            return this;
+        }
+        boolean swapped;
+        Node lastSorted = null;
+        do{
+            swapped = false;
+            Node p = head;
+            while(p.next != lastSorted){
+                int month1 = p.info.getMonth();
+                int month2 = p.next.info.getMonth();
+                if(month1 > month2){
+                    Event tmp = p.info;
+                    p.info = p.next.info;
+                    p.next.info = tmp;
+                    swapped = true;
+                }
+                p = p.next;
+            }
+            lastSorted = p;
+        } while(swapped); 
+    return this;
+}
     
     public void traverse(){
         Node p = head;
@@ -141,16 +177,18 @@ class MyStack{
         if(location == null || location.trim().isEmpty()){
             return 0;
         }
+        String forwardString = location.trim().toUpperCase();
+        
         Node p = top;
         while(p != null){
-            if(p.info.getLocation() != null){
+            if(p.info.getLocation() != null && p.info.getLocation().trim().toUpperCase().equals(forwardString)){
                 count++;
             }
             p = p.next;
         }
         return count;
     }
-    
+   
     public void traverse(){
         Node p = top;
         while(p != null){
