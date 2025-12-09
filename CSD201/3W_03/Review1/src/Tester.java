@@ -23,39 +23,39 @@ public class Tester {
         company.sList.addFirst(e7);
         company.sList.addFirst(e8);
         
-//        company.myStack.push(e1);
-//        company.myStack.push(e2);
-//        company.myStack.push(e3);
-//        company.myStack.push(e4);
-//        company.myStack.push(e5);
-//        company.myStack.push(e6);
-//        company.myStack.push(e7);
-//        company.myStack.push(e8);
+        company.myStack.push(e1);
+        company.myStack.push(e2);
+        company.myStack.push(e3);
+        company.myStack.push(e4);
+        company.myStack.push(e5);
+        company.myStack.push(e6);
+        company.myStack.push(e7);
+        company.myStack.push(e8);
         
         company.sList.traverse();
-//        company.myStack.traverse();
+        company.myStack.traverse();
         
         // 3 POINTS
-//        Event e9 = new Event("e009", "HN", 2);
-//        company.sList.addPosition(e9, 5);
-//        company.sList.traverse();
-//        System.out.println("Top = " + company.myStack.top().info);
+        Event e9 = new Event("e009", "HN", 2);
+        company.sList.addPosition(e9, 5);
+        company.sList.traverse();
+        System.out.println("Top = " + company.myStack.top().info);
 //        
 //        // 3 POINTS
         company.sList.SortByMonthAsc();
         company.sList.traverse();
-        //System.out.println("Cout in stack (HCM) = " + company.myStack.countEventByLocation("HCM"));
+        System.out.println("Cout in stack (HCM) = " + company.myStack.countEventByLocation("HCM"));
 //        
 //        // 2 POINTS - remove 4 first elements in SLL and Stack
-//        company.sList.removeFirst();
-//        company.sList.removeFirst();
-//        company.sList.removeFirst();
-//        company.sList.removeFirst();
-//        company.sList.traverse();
-//        company.myStack.pop();
-//        company.myStack.pop();
-//        company.myStack.pop();
-//        company.myStack.pop();
-//        company.myStack.traverse();
+        company.sList.removeFirst();
+        company.sList.removeFirst();
+        company.sList.removeFirst();
+        company.sList.removeFirst();
+        company.sList.traverse();
+        company.myStack.pop();
+        company.myStack.pop();
+        company.myStack.pop();
+        company.myStack.pop();
+        company.myStack.traverse();
     }
 }
