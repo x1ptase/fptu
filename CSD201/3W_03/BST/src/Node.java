@@ -1,6 +1,6 @@
 public class Node {
     int info;
-    Node left, right;
+    Node left, right, next;
 
     public Node() {
     }
@@ -9,5 +9,6 @@ public class Node {
         this.info = info;
         left = null;
         right = null;
+        next = null;
     }   
 }

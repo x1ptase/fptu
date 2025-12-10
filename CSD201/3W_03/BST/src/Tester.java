@@ -7,8 +7,11 @@ public class Tester {
         bst.insert(2);
         bst.insert(3);
         bst.insert(7);
+        
         bst.breadth();
+      
+        bst.preOrder(); 
+        bst.inOrder(); 
         bst.postOrder();
-        bst.traverse();
     }
 }
