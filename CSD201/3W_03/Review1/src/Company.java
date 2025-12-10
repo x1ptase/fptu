@@ -114,7 +114,7 @@ class sll{
             lastSorted = p;
         } while(swapped); 
     return this;
-}
+    }
     
     public void traverse(){
         Node p = head;
