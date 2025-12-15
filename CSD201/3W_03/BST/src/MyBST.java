@@ -32,30 +32,35 @@ public class MyBST {
         return p;
     }
     
-    public void insert(int x){
-        Node p = new Node(x);
+    public void insert(Flight flight){
+        if((flight.getPrice() <= 0) 
+                && (flight.getStatus() < -1 || flight.getStatus() > 1)
+                && (flight.getFlightCode() == null || flight.getFlightCode().trim().isEmpty())){
+            return;
+        }
+        Node p = new Node(flight);
         if(isEmpty()){
             root = p;
-        } else{
-            Node current = root;
-            while(true){
-                if(x == current.info){
-                    return;
-                }
-                if(x < current.info){
-                    if(current.left == null){
-                        current.left = p;
-                        return;
-                    }
-                    current=current.left;
-                } else{
-                    if(current.right == null){
-                        current.right=p;
-                        return;
-                    }
-                    current=current.right;
-                }
+            return;
+        }
+        Node current = root;
+        Node parent = null;
+        while(current != null){
+            parent = current;
+            int comparison = flight.getFlightCode().compareTo(current.info.getFlightCode());
+            
+            if(comparison < 0){
+                current = current.left; 
+            } else if(comparison > 0){
+                current = current.right; 
+            } else {
+                return; 
             }
+        }
+        if(flight.getFlightCode().compareTo(parent.info.getFlightCode()) < 0){
+            parent.left = p;
+        } else {
+            parent.right = p;
         }
     }
     

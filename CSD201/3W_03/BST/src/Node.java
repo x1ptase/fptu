@@ -1,11 +1,11 @@
 public class Node {
-    int info;
+    Flight info;
     Node left, right, next;
 
     public Node() {
     }
 
-    public Node(int info) {
+    public Node(Flight info) {
         this.info = info;
         left = null;
         right = null;
