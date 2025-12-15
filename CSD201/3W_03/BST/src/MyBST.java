@@ -33,9 +33,9 @@ public class MyBST {
     }
     
     public void insert(Flight flight){
-        if((flight.getPrice() <= 0) 
-                && (flight.getStatus() < -1 || flight.getStatus() > 1)
-                && (flight.getFlightCode() == null || flight.getFlightCode().trim().isEmpty())){
+        if((flight.getPrice() <= 0) || 
+           (flight.getStatus() < -1 || flight.getStatus() > 1) || 
+           (flight.getFlightCode() == null || flight.getFlightCode().trim().isEmpty())){
             return;
         }
         Node p = new Node(flight);
@@ -47,20 +47,16 @@ public class MyBST {
         Node parent = null;
         while(current != null){
             parent = current;
-            int comparison = flight.getFlightCode().compareTo(current.info.getFlightCode());
-            
-            if(comparison < 0){
+            if(flight.getPrice() < current.info.getPrice()){
                 current = current.left; 
-            } else if(comparison > 0){
-                current = current.right; 
-            } else {
-                return; 
+            } else{
+                current = current.right;
             }
-        }
-        if(flight.getFlightCode().compareTo(parent.info.getFlightCode()) < 0){
-            parent.left = p;
-        } else {
-            parent.right = p;
+            if(flight.getPrice() < parent.info.getPrice()){
+                parent.left = p;
+            } else{
+                parent.right = p;
+            }
         }
     }
     
@@ -127,3 +123,4 @@ public class MyBST {
         visit(p);
     }
 }
+

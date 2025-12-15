@@ -3,7 +3,7 @@ public class Flight {
     private String flightCode;
     private String from, to;
     private int status; // -1: Scheduled; 0: Departed; 1: Landed
-    private double price; // must be > 0
+    private double price; // must be > 0, key value
 
     public Flight() {
     }
@@ -58,7 +58,7 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Flight{" + "filghtCode=" + flightCode + ", from=" + from + ", to=" + to + ", status=" + status + ", price=" + price + '}';
+        return String.format("%s (Status:%d, Price:%.0f)", flightCode, status, price);
     }
     
     
