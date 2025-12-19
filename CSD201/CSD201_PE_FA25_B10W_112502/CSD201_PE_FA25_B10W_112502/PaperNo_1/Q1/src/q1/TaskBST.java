@@ -28,8 +28,7 @@ public class TaskBST {
                 for (Task task : tasks) {
                     f.writeBytes(task.toString() + "\r\n");
                 }
-            }
-            
+            }      
         }
     }
     
@@ -55,8 +54,19 @@ public class TaskBST {
     public void insert(Task task) {
         // ---------- Student's code starts from here ----------
         // Students are welcomed to use any helper function(s)
-        return;
+        root = insertRec(root, task);
         // -----------------------------------------------------
+    }
+    private TreeNode insertRec(TreeNode p, Task task){
+        if(p == null){
+            return new TreeNode(task);
+        }
+        if(task.priority < p.task.priority){
+            p.left = insertRec(p.left, task);
+        } else{
+            p.right = insertRec(p.right, task);
+        }
+        return p;
     }
 
     // f3: Pre-Order Traversal
@@ -64,17 +74,52 @@ public class TaskBST {
         List<Task> result = new ArrayList<>();
         // ---------- Student's code starts from here ----------
         // Students are welcomed to use any helper function(s)
-        
+        preOrderHelper(root, result);
         // -----------------------------------------------------
         return result;
+    }
+    private void preOrderHelper(TreeNode p, List<Task> result){
+        if(p == null){
+            return;
+        }
+        result.add(p.task);
+        preOrderHelper(p.left, result);
+        preOrderHelper(p.right, result);
     }
     
     // f4: Remove a Task from the BST
     public void remove(int priority) {
         // ---------- Student's code starts from here ----------
         // Students are welcomed to use any helper function(s)
-        return;
+        root = removeRec(root, priority);
         // -----------------------------------------------------
+    }
+    private TreeNode removeRec(TreeNode p, int priority){
+        if(p == null){
+            return null;
+        }
+        if(priority < p.task.priority){
+            p.left = removeRec(p.left, priority);
+        } else if(priority > p.task.priority){
+            p.right = removeRec(p.right, priority);
+        } else{
+            if(p.left == null) {
+                return p.right;
+            } else if(p.right == null) {
+                return p.left;
+            }
+            p.task = findMinTask(p.right);
+            p.right = removeRec(p.right, p.task.priority);
+        }
+        return p;
+    }
+    private Task findMinTask(TreeNode p){
+        Task minTask = p.task;
+        while(p.left != null){
+            p = p.left;
+            minTask = p.task;
+        }
+        return minTask;
     }
     // =======================================================
 }

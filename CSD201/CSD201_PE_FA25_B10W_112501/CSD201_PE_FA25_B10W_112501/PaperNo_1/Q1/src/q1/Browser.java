@@ -71,7 +71,6 @@ public class Browser {
         }
         tail.next = p;
         p.prev = tail;
-        
         // -----------------------------------------------------
     }
 
@@ -101,23 +100,19 @@ public class Browser {
         if(activeTab == null || activeTab.prev == null){
             return;
         }
-        
         TabNode B = activeTab;
         TabNode A = activeTab.prev;
-        TabNode nextOfB = B.next; // Lưu lại node sau B trước khi hoán đổi
-        TabNode prevOfA = A.prev; // Lưu lại node trước A
+        TabNode nextOfB = B.next;
+        TabNode prevOfA = A.prev; 
 
-        // 1. Kết nối node trước A với B
         if(prevOfA != null){
             prevOfA.next = B;
         }
         B.prev = prevOfA;
 
-        // 2. Kết nối B với A
         B.next = A;
         A.prev = B;
 
-        // 3. Kết nối A với node vốn dĩ đứng sau B
         A.next = nextOfB;
         if(nextOfB != null){
             nextOfB.prev = A;

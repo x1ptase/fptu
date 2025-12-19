@@ -30,14 +30,20 @@ public class CompletionQueue {
     public boolean isEmpty() {
         // ---------- Student's code starts from here ----------
         // Students are welcomed to use any helper function(s)
-        return false;
+        return front == null;
         // -----------------------------------------------------
     }
 
     public void enqueue(Task task) {
         // ---------- Student's code starts from here ----------
         // Students are welcomed to use any helper function(s)
-        return;
+        QueueNode p = new QueueNode(task);
+        if(isEmpty()){
+            front = rear = p;
+        } else{
+            rear.next = p;
+            rear = p;
+        }
         // -----------------------------------------------------
     }
     // =======================================================
