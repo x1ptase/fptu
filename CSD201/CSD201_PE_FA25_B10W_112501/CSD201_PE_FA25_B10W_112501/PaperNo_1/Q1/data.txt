@@ -1,0 +1,5 @@
+2
+google.com wikipedia.org
+Google_Search Wikipedia
+news.com Online_News startpage.com My_Start_Page
+science.com Science_Daily research.com Research_Portal
