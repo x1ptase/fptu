@@ -41,8 +41,12 @@ public class HistoryStack {
     public void push(WebPage page) {
         // ---------- Student's code starts from here ----------
         HistoryNode p = new HistoryNode(page);
-        p.next = top;
-        top = p;
+        if(isEmpty()){
+            top = p;
+        } else{
+            p.next = top;
+            top = p;
+        }
         // -----------------------------------------------------
     }
     // =======================================================
