@@ -1,0 +1,9 @@
+>>> Testing f1: HistoryStack push() and isEmpty()
+Is stack empty initially? Yes
+Pushing two pages...
+Is stack empty now? No
+
+Final Stack State:
+  History:
+    - (URL: page2.com, Title: Page Two)
+    - (URL: page1.com, Title: Page One)

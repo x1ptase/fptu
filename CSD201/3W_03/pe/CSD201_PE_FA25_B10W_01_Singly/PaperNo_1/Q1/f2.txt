@@ -1,0 +1,28 @@
+--- Initial State ---
+--- Browser State ---
+Active Tab: (URL: google.com, Title: Google_Search)
+  History:
+    - (URL: startpage.com, Title: My_Start_Page)
+    - (URL: news.com, Title: Online_News)
+Tab 2: (URL: wikipedia.org, Title: Wikipedia)
+  History:
+    - (URL: research.com, Title: Research_Portal)
+    - (URL: science.com, Title: Science_Daily)
+---------------------
+
+>>> Testing f2: Opening a new tab...
+
+--- Final State ---
+--- Browser State ---
+Active Tab: (URL: google.com, Title: Google_Search)
+  History:
+    - (URL: startpage.com, Title: My_Start_Page)
+    - (URL: news.com, Title: Online_News)
+Tab 2: (URL: wikipedia.org, Title: Wikipedia)
+  History:
+    - (URL: research.com, Title: Research_Portal)
+    - (URL: science.com, Title: Science_Daily)
+Tab 3: (URL: elearning.com, Title: E-Learning_Portal)
+  History:
+    [No History]
+---------------------

@@ -1,0 +1,21 @@
+--- Initial State (Active Tab is the second one) ---
+--- Browser State ---
+Tab 1: (URL: google.com, Title: Google_Search)
+  History:
+    - (URL: startpage.com, Title: My_Start_Page)
+    - (URL: news.com, Title: Online_News)
+Active Tab: (URL: wikipedia.org, Title: Wikipedia)
+  History:
+    - (URL: research.com, Title: Research_Portal)
+    - (URL: science.com, Title: Science_Daily)
+---------------------
+
+>>> Testing f3: Closing the current tab...
+
+--- Final State ---
+--- Browser State ---
+Active Tab: (URL: google.com, Title: Google_Search)
+  History:
+    - (URL: startpage.com, Title: My_Start_Page)
+    - (URL: news.com, Title: Online_News)
+---------------------
