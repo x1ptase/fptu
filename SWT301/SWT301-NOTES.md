@@ -37,7 +37,7 @@ Hiểu Unit Testing Tool là gì?
 LAB1:
 
 Slide
-
+v
 WHAT? (Nói cụ thể Jest là gì?)
 
 WHY?
