@@ -95,16 +95,6 @@
             <mxPoint x="280" y="240" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ltok7EPSfNEQia3b01QP-4" edge="1" parent="1" source="leader" style="labelBackgroundColor=none;fontColor=default;strokeColor=#000000;rounded=1;entryX=0.238;entryY=0.917;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;curved=0;" target="sys" value="Task status&#xa;Team progress&#xa;Commit summaries">
-          <mxGeometry relative="1" x="-0.0163" y="-31" as="geometry">
-            <mxPoint as="offset" />
-            <Array as="points">
-              <mxPoint x="430" y="440" />
-            </Array>
-            <mxPoint x="300" y="440" as="sourcePoint" />
-            <mxPoint x="355" y="423.5" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="Ltok7EPSfNEQia3b01QP-6" edge="1" parent="1" source="sys" style="labelBackgroundColor=none;fontColor=default;strokeColor=#000000;rounded=0;exitX=0.948;exitY=0.703;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="member" value="Assigned task&#xa;Personal progress&#xa;Contribution statistics">
           <mxGeometry relative="1" x="0.1802" y="-32" as="geometry">
             <mxPoint as="offset" />
@@ -123,6 +113,16 @@
         </mxCell>
         <mxCell id="Ltok7EPSfNEQia3b01QP-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="&lt;span style=&quot;font-size: 11px; text-wrap-mode: nowrap;&quot;&gt;Issue queries&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 11px; text-wrap-mode: nowrap;&quot;&gt;&lt;span style=&quot;font-size: 11px; text-wrap-mode: nowrap;&quot;&gt;Task status update requests&lt;/span&gt;" vertex="1">
           <mxGeometry height="40" width="160" x="410" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="gjn4BCnENWiFFMAv-0jg-1" edge="1" parent="1" source="sys" style="labelBackgroundColor=none;fontColor=default;strokeColor=#000000;rounded=1;curved=0;exitX=0.369;exitY=1.003;exitDx=0;exitDy=0;exitPerimeter=0;" value="Task status&#xa;Team progress&#xa;Commit summaries">
+          <mxGeometry relative="1" x="0.077" y="29" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="440" y="450" />
+            </Array>
+            <mxPoint x="547" y="420" as="sourcePoint" />
+            <mxPoint x="330" y="486" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
