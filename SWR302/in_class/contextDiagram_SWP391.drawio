@@ -11,7 +11,7 @@
           <mxGeometry height="50" width="140" x="100" y="180" as="geometry" />
         </mxCell>
         <mxCell id="lecturer" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FFF7A1;strokeColor=#36393d;" value="Lecturer" vertex="1">
-          <mxGeometry height="50" width="140" x="740" y="80" as="geometry" />
+          <mxGeometry height="50" width="140" x="690" y="70" as="geometry" />
         </mxCell>
         <mxCell id="leader" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FFF7A1;strokeColor=#36393d;" value="Team Leader" vertex="1">
           <mxGeometry height="50" width="160" x="140" y="420" as="geometry" />
@@ -35,19 +35,19 @@
             <mxPoint x="466.8352860700277" y="250.31651484651627" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HSxCgAYJomcHBs6_dfWx-3" edge="1" parent="1" style="labelBackgroundColor=none;fontColor=default;strokeColor=#000000;rounded=1;curved=0;" target="sys" value="Update task status&#xa;Work progress input">
-          <mxGeometry relative="1" x="-1" y="61" as="geometry">
-            <mxPoint x="48" y="-70" as="offset" />
+        <mxCell id="HSxCgAYJomcHBs6_dfWx-3" edge="1" parent="1" style="labelBackgroundColor=none;fontColor=default;strokeColor=#000000;rounded=1;curved=0;" target="sys" value="Code Commits &#xa;Task Status">
+          <mxGeometry relative="1" x="-1" y="-41" as="geometry">
+            <mxPoint x="47" y="30" as="offset" />
             <Array as="points" />
-            <mxPoint x="700" y="280" as="sourcePoint" />
+            <mxPoint x="730" y="280" as="sourcePoint" />
             <mxPoint x="630" y="260" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="HSxCgAYJomcHBs6_dfWx-4" edge="1" parent="1" style="labelBackgroundColor=none;fontColor=default;strokeColor=#000000;rounded=0;entryX=0.374;entryY=1.056;entryDx=0;entryDy=0;entryPerimeter=0;" value="Progress reports&#xa;Contribution statistics">
-          <mxGeometry relative="1" x="-1" y="-30" as="geometry">
-            <mxPoint x="-40" y="1" as="offset" />
-            <mxPoint x="700" y="187.2" as="sourcePoint" />
-            <mxPoint x="762.3599999999999" y="129.99999999999994" as="targetPoint" />
+          <mxGeometry relative="1" x="-1" y="28" as="geometry">
+            <mxPoint x="1" y="38" as="offset" />
+            <mxPoint x="670" y="180" as="sourcePoint" />
+            <mxPoint x="722.3599999999999" y="119.99999999999994" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="HSxCgAYJomcHBs6_dfWx-7" edge="1" parent="1" style="labelBackgroundColor=none;fontColor=default;strokeColor=#000000;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="github" value="Repository &amp; &#xa;commit queries">
@@ -86,12 +86,12 @@
             <mxPoint x="270" y="290" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ltok7EPSfNEQia3b01QP-6" edge="1" parent="1" style="labelBackgroundColor=none;fontColor=default;strokeColor=#000000;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="member" value="Assigned task&#xa;Personal progress&#xa;Contribution statistics">
-          <mxGeometry relative="1" x="-1" y="51" as="geometry">
-            <mxPoint x="-36" y="59" as="offset" />
+        <mxCell id="Ltok7EPSfNEQia3b01QP-6" edge="1" parent="1" style="labelBackgroundColor=none;fontColor=default;strokeColor=#000000;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" value="Assigned task&#xa;Personal progress&#xa;Contribution statistics">
+          <mxGeometry relative="1" x="-1" y="41" as="geometry">
+            <mxPoint x="-29" y="48" as="offset" />
             <Array as="points" />
-            <mxPoint x="770" y="310" as="sourcePoint" />
-            <mxPoint x="947" y="300" as="targetPoint" />
+            <mxPoint x="780" y="321" as="sourcePoint" />
+            <mxPoint x="850" y="298.75" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Ltok7EPSfNEQia3b01QP-7" edge="1" parent="1" source="Ltok7EPSfNEQia3b01QP-8" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.438;exitY=0.06;exitDx=0;exitDy=0;exitPerimeter=0;" target="jira" value="">
@@ -133,7 +133,7 @@
         <mxCell id="d2k_b6SovvNKqgW3MR-6-4" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="610" y="270" as="sourcePoint" />
-            <mxPoint x="655" y="230" as="targetPoint" />
+            <mxPoint x="650" y="220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="d2k_b6SovvNKqgW3MR-6-5" edge="1" parent="1" source="admin" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" value="">
@@ -157,7 +157,7 @@
         <mxCell id="d2k_b6SovvNKqgW3MR-6-8" edge="1" parent="1" source="sys" style="endArrow=none;html=1;rounded=0;exitX=0.976;exitY=0.697;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="610" y="370" as="sourcePoint" />
-            <mxPoint x="660" y="330" as="targetPoint" />
+            <mxPoint x="690" y="330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="d2k_b6SovvNKqgW3MR-6-9" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="sys" value="">
@@ -182,6 +182,20 @@
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="440" y="420" as="sourcePoint" />
             <mxPoint x="505" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fpP2TOUiQ0Vjiw1p8Obo-2" edge="1" parent="1" style="labelBackgroundColor=none;fontColor=default;strokeColor=#000000;rounded=1;curved=0;" value="Task Assignment &#xa;Member &amp; Class Management">
+          <mxGeometry relative="1" x="-1" y="-36" as="geometry">
+            <mxPoint x="44" y="13" as="offset" />
+            <Array as="points" />
+            <mxPoint x="770" y="210" as="sourcePoint" />
+            <mxPoint x="617" y="274" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fpP2TOUiQ0Vjiw1p8Obo-3" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="800" y="170" as="sourcePoint" />
+            <mxPoint x="810" y="120" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
