@@ -1,0 +1,232 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram name="Detailed Context Diagram" id="0">
+    <mxGraphModel dx="1027" dy="660" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sys" parent="1" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FFF7A1;strokeColor=#36393d;rounded=0;" value="Supporting Tool&lt;br&gt;Requirements &amp;amp; Project Progress Management&lt;br&gt;(Jira &amp;amp; GitHub Integration)" vertex="1">
+          <mxGeometry height="120" width="170" x="460" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FFF7A1;strokeColor=#36393d;" value="Admin" vertex="1">
+          <mxGeometry height="50" width="140" x="100" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="lecturer" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FFF7A1;strokeColor=#36393d;" value="Lecturer" vertex="1">
+          <mxGeometry height="50" width="140" x="770" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leader" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FFF7A1;strokeColor=#36393d;" value="Team Leader" vertex="1">
+          <mxGeometry height="50" width="160" x="100" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="member" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FFF7A1;strokeColor=#36393d;" value="Team Member" vertex="1">
+          <mxGeometry height="50" width="160" x="870" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="jira" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FFF7A1;strokeColor=#36393d;" value="Jira Cloud System" vertex="1">
+          <mxGeometry height="60" width="220" x="410" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="github" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#FFF7A1;strokeColor=#36393d;" value="GitHub Cloud System" vertex="1">
+          <mxGeometry height="60" width="220" x="520" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-3" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.176;entryY=0.083;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0;exitDx=0;exitDy=0;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="170" />
+            </Array>
+            <mxPoint x="240" y="110" as="sourcePoint" />
+            <mxPoint x="489.9200000000001" y="269.96000000000004" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-4" connectable="0" parent="75GeTmLzfCpq05JeSXN5-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span&gt;&lt;span&gt;User / Group Management&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span&gt;Integration Configuration&lt;/span&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1237" y="2" as="geometry">
+            <mxPoint x="-9" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-5" edge="1" parent="1" source="sys" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;curved=1;" target="admin" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="370" />
+            </Array>
+            <mxPoint x="60" y="240" as="sourcePoint" />
+            <mxPoint x="110" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-6" connectable="0" parent="75GeTmLzfCpq05JeSXN5-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span&gt;Configuration status&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;System feedback/ confirmation&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.1506" y="-27" as="geometry">
+            <mxPoint x="21" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-7" edge="1" parent="1" source="admin" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="270" />
+            </Array>
+            <mxPoint x="75" y="190" as="sourcePoint" />
+            <mxPoint x="460" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-8" connectable="0" parent="75GeTmLzfCpq05JeSXN5-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Assign lecturers to courses&amp;nbsp;&lt;div&gt;by class and semester.&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.029" y="4" as="geometry">
+            <mxPoint x="28" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-9" edge="1" parent="1" source="admin" style="endArrow=classic;html=1;rounded=0;entryX=0.053;entryY=0.277;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.813;exitY=1.04;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="240" y="160" as="sourcePoint" />
+            <mxPoint x="469.01" y="293.24" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-10" connectable="0" parent="75GeTmLzfCpq05JeSXN5-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Jira, GitHub configuration" vertex="1">
+          <mxGeometry relative="1" x="-0.096" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-11" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="186" />
+            </Array>
+            <mxPoint x="520" y="250" as="sourcePoint" />
+            <mxPoint x="480" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-12" connectable="0" parent="75GeTmLzfCpq05JeSXN5-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span&gt;Issue queries&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;Task status update requests&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.144" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-13" edge="1" parent="1" source="jira" style="endArrow=classic;html=1;rounded=0;entryX=0.588;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" target="sys" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="560" y="120" as="sourcePoint" />
+            <mxPoint x="570" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-14" connectable="0" parent="75GeTmLzfCpq05JeSXN5-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span&gt;&lt;span&gt;Requirements&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span&gt;Tasks&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span&gt;Sprint &amp;amp; status data&lt;/span&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1954" as="geometry">
+            <mxPoint x="14" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-17" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="789.6" y="220" />
+            </Array>
+            <mxPoint x="849.6" y="83" as="sourcePoint" />
+            <mxPoint x="620.0008270470379" y="282.301737003129" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-18" connectable="0" parent="75GeTmLzfCpq05JeSXN5-17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=default;" value="&lt;span style=&quot;&quot;&gt;Task Assignment&amp;nbsp;&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;Member &amp;amp; Class Management&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0819" y="-7" as="geometry">
+            <mxPoint x="22" y="-83" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-19" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;curved=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="sys" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="330" />
+            </Array>
+            <mxPoint x="870" y="299.96" as="sourcePoint" />
+            <mxPoint x="640" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-20" connectable="0" parent="75GeTmLzfCpq05JeSXN5-19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=default;" value="&lt;span style=&quot;&quot;&gt;Code Commits&amp;nbsp;&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;Task Status&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1461" y="2" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-21" edge="1" parent="1" source="sys" style="endArrow=classic;html=1;rounded=0;entryX=0.349;entryY=1.04;entryDx=0;entryDy=0;exitX=0.941;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;curved=1;entryPerimeter=0;" target="member" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="390" />
+            </Array>
+            <mxPoint x="650" y="340" as="sourcePoint" />
+            <mxPoint x="700" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-22" connectable="0" parent="75GeTmLzfCpq05JeSXN5-21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=default;" value="&lt;span style=&quot;&quot;&gt;Assigned task&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;Personal progress&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;Contribution statistics&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0604" as="geometry">
+            <mxPoint y="-19" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-23" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.989;entryY=0.317;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1010" y="200" />
+            </Array>
+            <mxPoint x="900" y="80" as="sourcePoint" />
+            <mxPoint x="630.0000000000001" y="293.03999999999996" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-24" connectable="0" parent="75GeTmLzfCpq05JeSXN5-23" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Create groups&amp;nbsp;&lt;div&gt;and&amp;nbsp;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;assign topics&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.2651" y="-21" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-25" edge="1" parent="1" source="sys" style="endArrow=classic;html=1;rounded=0;curved=1;entryX=0.084;entryY=1.032;entryDx=0;entryDy=0;entryPerimeter=0;" target="lecturer" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="700" y="130" as="sourcePoint" />
+            <mxPoint x="750" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-26" connectable="0" parent="75GeTmLzfCpq05JeSXN5-25" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Progress reports&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;Contribution statistics" vertex="1">
+          <mxGeometry relative="1" x="0.1049" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-27" edge="1" parent="1" source="sys" style="endArrow=classic;html=1;rounded=0;entryX=0.201;entryY=-0.047;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;" target="github" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="545" y="400" />
+            </Array>
+            <mxPoint x="550" y="380" as="sourcePoint" />
+            <mxPoint x="560" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-28" connectable="0" parent="75GeTmLzfCpq05JeSXN5-27" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=default;" value="&lt;span&gt;&lt;span style=&quot;&quot;&gt;Repository &amp;amp;&amp;nbsp;&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;commit queries&lt;/span&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0877" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-29" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="410" />
+            </Array>
+            <mxPoint x="660" y="470" as="sourcePoint" />
+            <mxPoint x="600" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-30" connectable="0" parent="75GeTmLzfCpq05JeSXN5-29" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=default;" value="&lt;span style=&quot;&quot;&gt;Commit history&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;Contributor statistics&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.0211" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-31" edge="1" parent="1" source="sys" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0.353;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;curved=1;" target="leader" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="440" />
+            </Array>
+            <mxPoint x="450" y="410" as="sourcePoint" />
+            <mxPoint x="500" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-32" connectable="0" parent="75GeTmLzfCpq05JeSXN5-31" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=default;" value="&lt;span style=&quot;&quot;&gt;Task status&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;Team progress&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;Commit summaries&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0388" y="-14" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-33" edge="1" parent="1" source="leader" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="390" />
+            </Array>
+            <mxPoint x="420" y="390" as="sourcePoint" />
+            <mxPoint x="470" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75GeTmLzfCpq05JeSXN5-34" connectable="0" parent="75GeTmLzfCpq05JeSXN5-33" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=default;" value="&lt;span style=&quot;&quot;&gt;Project setup&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;Requirement &amp;amp; Task management&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;&lt;span style=&quot;&quot;&gt;Task assignment&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.094" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
