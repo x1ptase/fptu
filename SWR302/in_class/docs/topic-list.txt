@@ -1,0 +1,14 @@
+Topic:
+Xây dựng công cụ hỗ trợ quản lý yêu cầu và tiến độ dự án phần mềm cho môn SWP391 thông qua Jira và GitHub
+
+A Supporting Tool for Requirements and Project Progress Management in Software Project Course SWP391 Using Jira and GitHub
+
+Context:
+Trong đào tạo ngành Kỹ thuật Phần mềm, việc quản lý yêu cầu và theo dõi tiến độ dự án đóng vai trò quan trọng trong việc hình thành tư duy phát triển phần mềm chuyên nghiệp cho sinh viên. 
+Hiện nay, Jira thường được sử dụng để quản lý yêu cầu và công việc (tasks), trong khi GitHub được sử dụng để quản lý mã nguồn và quá trình phát triển phần mềm.
+
+
+Primary Actors:
+Admin, Lecturer, Team Leader, Team member
+
+

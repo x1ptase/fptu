@@ -1,0 +1,11 @@
+FE-01: Manually synchronize project request data from Jira Software Cloud used in course SWP391, including epics, user stories, tasks, bugs, issue status, and sprint information for each student project team. 
+
+FE-02: Statistical analysis of software development activity data from GitHub repositories of SWP391 course projects, including commit history, pull requests, contributors, and individual student contribution metrics. 
+
+FE-03: Provide an academic-oriented project monitoring dashboard that presents an integrated view of project requirements, sprint progress, and source code development status to support learning and project supervision in the SWP391 course. 
+
+FE-04: Create course-oriented reports, including group progress reports and individual contribution reports, to support weekly tracking, mid-term evaluation, final reports, and course presentations for SWP391. 
+
+FE-05: Support role-based access and views in a university environment, including students, team leaders, and lecturers, ensuring that each role can access information relevant to their learning, team management, and teaching responsibilities in the SWP391 course. 
+
+FE-06: Visualize task assignment, task completion status, and participation levels of individual students within each project team to support fair assessment by lecturers and effective task coordination by team leaders.

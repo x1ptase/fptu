@@ -1,0 +1,57 @@
+#		Screen				Feature				Description
+FR-01		Login				User Login			The system allows users to log in using their account credentials.
+FR-02		Dashboard			Role-based Dashboard		The system displays a dashboard based on the user's role (Admin, Lecturer, Team Leader, Team Member).
+FR-03		User Management			View Users			Admin can view the list of all users in the system.
+FR-04		User Management			Create User			Admin can create a new user account.
+FR-05		User Management			Assign Role			Admin can assign roles to users (Admin, Lecturer, Student).
+FR-06		User Management			System Overview			Displays the system overview and provides access to administrative management functions.
+FR-07		Trimester Management		View Trimester List		Admin can view the list of trimesters.
+FR-08		Trimester Management		Create Trimester		Admin can create a new trimester.
+FR-09		Trimester Management		Edit Trimester			Admin can edit trimester information.
+FR-10		Trimester Management		Trimester Management		Admin can activate or deactivate a trimester.
+FR-11		Course Management		View Course List		Admin can view the list of courses.
+FR-12		Course Management		Create Course			Admin can create a new course.
+FR-13		Course Management		Assign Lecturer to Course	Admin can assign lecturers to courses.
+FR-14		Course Management		Assign Trimester to Course	Admin can assign a trimester to a course.
+FR-15		Lecturer Management		View Lecturer List		Admin can view the list of lecturers.
+FR-16		Lecturer Management		Add Lecturer			Admin can add a new lecturer.
+FR-17		Lecturer Management		Edit Lecturer			Admin can edit lecturer information.
+FR-18		Lecturer Management		Assign Lecturer to Course	Admin can assign lecturers to specific courses.
+FR-19		Student Management		View Student List		Admin can view the list of students.
+FR-20		Student Management		Add Student			Admin can add a new student.
+FR-21		Student Management		Assign Student to Course	Admin can assign students to courses.
+FR-22		Group Management		View Groups			Admin can view all groups in the system.
+FR-23		Group Management		Search Groups			Admin can search groups by criteria.
+FR-24		Jira Integration		Configure Jira for Group	Admin can configure Jira integration for a group.
+FR-25		Jira Integration		Test Jira Connection		Admin can test the connection to the Jira API.
+FR-26		GitHub Integration		Configure GitHub for Group	Admin can configure GitHub integration for a group.
+FR-27		GitHub Integration		Test GitHub Connection		Admin can test the connection to the GitHub API.
+FR-28		Lecturer Dashboard		View Assigned Courses		Lecturer can view courses assigned to them.
+FR-29		Group Management		Create Group			Lecturer can create a student group within a course.
+FR-30		Group Management		Assign Students to Group	Lecturer can assign students to groups.
+FR-31		Group Management		Assign Team Leader		Lecturer can assign a team leader for a group.
+FR-32		Group Management		View Group List			Lecturer can view the list of groups in their course.
+FR-33		Topic Management		Assign Topic			Lecturer can assign project topics to groups.
+FR-34		Project Monitoring		View Project Progress		Lecturer can view the progress of each group’s project.
+FR-35		Team Leader Dashboard		View My Group			Team leader can view the group they belong to.
+FR-36		Group Settings			Configure Jira			Team leader can configure Jira integration for their group.
+FR-37		Jira Integration		Input Domain and API Token	Team leader can input Jira domain and API token.
+FR-38		Jira Integration		Test Jira Connection		Team leader can test Jira API connection.
+FR-39		Jira Integration		Sync Jira Tasks			Team leader can synchronize issues/tasks from Jira.
+FR-40		Jira Integration		Fetch Issues			The system fetches issues from Jira.
+FR-41		Requirement Management		Search Requirements		Team leader can search requirements from synced Jira issues.
+FR-42		GitHub Integration		Configure GitHub		Team leader can configure GitHub repository integration.
+FR-43		GitHub Integration		Input Repo URL and Token	Team leader can input GitHub repository URL and token.
+FR-44		GitHub Integration		Test GitHub Connection		Team leader can test GitHub API connection
+FR-45		GitHub Integration		Sync Commits			Team leader can synchronize commit data from GitHub.
+FR-46		GitHub Integration		Fetch Commits			The system fetches commits from GitHub repository.
+FR-47		Commit Statistics		View Group Commits		Team leader can view commit statistics of the group.
+FR-48		Commit Statistics		View Individual Commits		Team leader can view commits of each member.
+FR-49		Document Export			Export SRS			Team leader can export the SRS document generated from requirements.
+FR-50		Team Member Dashboard		View My Group			Team member can view their group information.
+FR-51		Group Information		View Group Members		Team member can view members of their group.
+FR-52		Requirement Management		View Requirements		Team member can view project requirements.
+FR-53		Task Management			View Tasks			Team member can view tasks assigned in the project.
+FR-54		Commit Statistics		View Commit Statistics		Team member can view commit statistics of the group.
+FR-55		Commit Statistics		View Group Commits		Team member can view group commits.
+FR-56		Commit Statistics		View Individual Commits		Team member can view commits of each member.

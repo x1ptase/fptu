@@ -1,0 +1,30 @@
+ID	Use Case	        	Actors		Use Case Description
+UC-01	Manage Content Users		Admin		Administers user accounts and permissions for content management within the system.
+UC-02	Manage Lecturers		Admin		Handles the creation, updates, and removal of Lecturer profiles and accounts.
+UC-03	Manage Students			Admin		Maintains the database of student records and their system access.
+UC-04	Manage Class			Admin		Creates and manages administrative details for different classes.
+UC-05	Manage Semesters/Terms		Admin		Configures the academic timeline, including semesters and specific terms.
+UC-06	Manage Topics			Admin		Curates and maintains the repository of project topics available for selection.
+UC-07	Assign Lecturer to Class	Admin		Links a specific Lecturer to a class they will be responsible for supervising.
+UC-08	Configure Jira Integration	Admin		Sets up API connections and synchronization rules with Jira Cloud.
+UC-09	Configure GitHub Integration	Admin		Sets up repository access and synchronization rules with GitHub Cloud.
+UC-10	View Assigned Classes		Lecturer	Allows the lecturer to see the list of classes they have been assigned to supervise.
+UC-11	Manage Class Students		Lecturer	Manages the specific roster of students within their assigned classes.
+UC-12	Create Project Groups		Lecturer	Divides the students in a class into specific project teams.
+UC-13	Assign Students to Groups	Lecturer	Allocates individual students to their respective project groups.
+UC-14	Assign Topic to Group		Lecturer	Formally assigns a project topic to a specific group for execution.
+UC-15	View Jira Requirements & Tasks	Lecturer	Monitors the project backlog and task distribution on Jira for their groups.
+UC-16	View Project Progress Report	Lecturer	Reviews comprehensive reports on the completion status of group projects.
+UC-17	View GitHub Commit Statistics	Lecturer	Tracks the coding activity and frequency of group contributions via GitHub data.
+UC-18	Manage Group Requirements	Team Leader	Defines and refines the specific requirements for the team's assigned project.
+UC-19	Update Jira Tasks		Team Leader	Edits, adjusts, or updates task details and priorities on the Jira board.
+UC-20	Assign Tasks to Members		Team Leader	Delegates specific Jira tasks to individual members of the project team.
+UC-21	Monitor Task Progress		Team Leader	Tracks the real-time status of all tasks assigned to the team.
+UC-22	View Team Commit Summary	Team Leader	Reviews a consolidated summary of the team's code contributions.
+UC-23	View Assigned Tasks		Team Member	Accesses a list of work items specifically assigned to the member.
+UC-24	Update Jira Task Status		Team Member	Updates the workflow status (e.g., In Progress to Done) for their own tasks.
+UC-25	Commit Code to GitHub		Team Member	Pushes source code changes to the project repository on GitHub.
+UC-26	View Personal Task Statistics	Team Member	Reviews personal productivity data and task completion metrics.
+UC-27	View Personal Commit Statistics	Team Member	Analyzes individual coding contribution history and frequency.
+UC-28	Sync Tasks & Status		Jira Cloud	Automatically synchronizes requirements and task updates with the ST-RPM system.
+UC-29	Sync Commits & Statistics	GitHub Cloud	Automatically pulls commit logs and repository data into the ST-RPM system.
