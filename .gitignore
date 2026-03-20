@@ -1,4 +1,63 @@
-/CSD201/3W_03/SingleLinkedList/nbproject/private/
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE
+# =========================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# =========================
+# Build files
+# =========================
+target/
+build/
+out/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Environment
+# =========================
+.env
+.env.*
+
+# =========================
+# Node (nếu có FE)
+# =========================
+node_modules/
+dist/
+
+# =========================
+# Database
+# =========================
+*.sql
+*.db
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# Misc
+# =======================D201/3W_03/SingleLinkedList/nbproject/private/
 /CSD201/3W_03/SingleLinkedList/build/
 /CSD201/3W_03/SingleLinkedList/dist/
 /CSD201/3W_03/DoublyLinkedList/nbproject/private/
@@ -6,8 +65,7 @@
 /CSD201/3W_03/DoublyLinkedList/dist/
 /CSD201/SE1805/DSA/LinkedList/CircularLinkedList/nbproject/private/
 /CSD201/SE1805/DSA/LinkedList/CircularLinkedList/build/
-/CSD201/SE1805/DSA/LinkedList/CircularLinkedList/dist/
-/CSD201/3W_03/CircularLinkedList/nbproject/private/
+/CS
 /CSD201/3W_03/CircularLinkedList/dist/
 /CSD201/3W_03/CircularLinkedList/build/
 /CSD201/3W_03/Stack/nbproject/private/
@@ -37,4 +95,65 @@
 /CSD201/CSD201_PE_FA25_B10W_112502/CSD201_PE_FA25_B10W_112502/PaperNo_1/Q1/dist/
 /CSD201/3W_03/pe/CSD201_PE_FA25_B10W_01_Circular/PaperNo_1/Q1/build/
 /CSD201/3W_03/pe/CSD201_PE_FA25_B10W_01_Circular/PaperNo_1/Q1/dist/
-/CSD201/3W_03/pe/CSD201_PE_FA25_B10W_01_Circular/PaperNo_1/Q1/nbproject/private/
+/CSD201/3W_03/pe/CSD201_PE_FA25_B10W_01_Circular/Pape# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE
+# =========================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# =========================
+# Build files
+# =========================
+target/
+build/
+out/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Environment
+# =========================
+.env
+.env.*
+
+# =========================
+# Node (nếu có FE)
+# =========================
+node_modules/
+dist/
+
+# =========================
+# Database
+# =========================
+*.sql
+*.db
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# Misc
+# =========================
+*.tmp
+*.swp

@@ -1,3 +1,0 @@
-RequestQueue
-MyStore
-FruitList

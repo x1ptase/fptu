@@ -1,3 +1,0 @@
-StudentManager
-ScholarshipList
-StudentBST

@@ -1,3 +1,0 @@
-dataList
-MyStore
-requestQueue
