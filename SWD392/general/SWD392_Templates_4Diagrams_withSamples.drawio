@@ -1,0 +1,328 @@
+<mxfile host="app.diagrams.net" version="24.0.0">
+
+  <diagram name="1-Class Diagram" id="class">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="ct" value="CLASS DIAGRAM — TEMPLATE" style="text;html=1;fontStyle=1;fontSize=20;align=left;" vertex="1" parent="1"><mxGeometry x="40" y="20" width="600" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="Base" value="&lt;&lt;abstract&gt;&gt;&#10;BaseClass" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=40;fillColor=none;" vertex="1" parent="1"><mxGeometry x="360" y="80" width="220" height="130" as="geometry"/></mxCell>
+        <mxCell id="Bf" value="- attribute1: type&#10;- attribute2: type" style="text;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="Base"><mxGeometry y="40" width="220" height="50" as="geometry"/></mxCell>
+        <mxCell id="Bd" value="" style="line;strokeWidth=1;" vertex="1" parent="Base"><mxGeometry y="90" width="220" height="8" as="geometry"/></mxCell>
+        <mxCell id="Bm" value="+ method(): returnType" style="text;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="Base"><mxGeometry y="98" width="220" height="32" as="geometry"/></mxCell>
+
+        <mxCell id="Sub" value="SubClass" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="120" y="290" width="200" height="80" as="geometry"/></mxCell>
+        <mxCell id="Subf" value="- field: type" style="text;align=left;spacingLeft=6;" vertex="1" parent="Sub"><mxGeometry y="26" width="200" height="27" as="geometry"/></mxCell>
+        <mxCell id="Subm" value="+ op()" style="text;align=left;spacingLeft=6;" vertex="1" parent="Sub"><mxGeometry y="53" width="200" height="27" as="geometry"/></mxCell>
+
+        <mxCell id="EntityA" value="EntityA" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="360" y="290" width="200" height="80" as="geometry"/></mxCell>
+        <mxCell id="EAf" value="- id: int&#10;- name: String" style="text;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="EntityA"><mxGeometry y="26" width="200" height="54" as="geometry"/></mxCell>
+
+        <mxCell id="EntityB" value="EntityB" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="640" y="290" width="200" height="80" as="geometry"/></mxCell>
+        <mxCell id="EBf" value="- id: int" style="text;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="EntityB"><mxGeometry y="26" width="200" height="54" as="geometry"/></mxCell>
+
+        <mxCell id="Enum" value="&lt;&lt;enumeration&gt;&gt;&#10;StatusEnum" style="swimlane;fontStyle=2;align=center;verticalAlign=top;startSize=40;fillColor=none;" vertex="1" parent="1"><mxGeometry x="900" y="290" width="200" height="110" as="geometry"/></mxCell>
+        <mxCell id="Env" value="VALUE_1&#10;VALUE_2&#10;VALUE_3" style="text;align=left;spacingLeft=6;verticalAlign=top;fontStyle=0;" vertex="1" parent="Enum"><mxGeometry y="40" width="200" height="70" as="geometry"/></mxCell>
+
+        <mxCell id="Service" value="SomeService" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="360" y="460" width="220" height="80" as="geometry"/></mxCell>
+        <mxCell id="Svm" value="+ businessLogic()" style="text;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="Service"><mxGeometry y="26" width="220" height="54" as="geometry"/></mxCell>
+
+        <mxCell id="IRepo" value="&lt;&lt;interface&gt;&gt;&#10;Repository&lt;T&gt;" style="swimlane;fontStyle=2;align=center;verticalAlign=top;startSize=40;fillColor=none;" vertex="1" parent="1"><mxGeometry x="660" y="460" width="220" height="90" as="geometry"/></mxCell>
+        <mxCell id="IRm" value="+ add(T) / findById(id): T" style="text;align=left;spacingLeft=6;verticalAlign=top;fontStyle=0;" vertex="1" parent="IRepo"><mxGeometry y="40" width="220" height="50" as="geometry"/></mxCell>
+
+        <mxCell id="Repo" value="ConcreteRepository" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="660" y="620" width="220" height="60" as="geometry"/></mxCell>
+        <mxCell id="Rd" value="implements Repository&lt;T&gt;" style="text;align=left;spacingLeft=6;fontStyle=0;" vertex="1" parent="Repo"><mxGeometry y="26" width="220" height="34" as="geometry"/></mxCell>
+
+        <mxCell id="e_inh" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;endSize=14;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="Sub" target="Base"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_assoc" value="1        *" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="EntityA" target="EntityB"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_dep" value="&lt;&lt;use&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="Service" target="IRepo"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_real" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;endSize=14;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="Repo" target="IRepo"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="note" value="UML Relation Notation" style="shape=note;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;verticalAlign=top;align=center;spacingTop=8;fillColor=none;size=20;" vertex="1" parent="1"><mxGeometry x="1180" y="80" width="380" height="470" as="geometry"/></mxCell>
+        <mxCell id="n1a" style="html=1;endArrow=open;endSize=12;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="1200" y="140" as="sourcePoint"/><mxPoint x="1330" y="140" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="n1t" value="Association — quan hệ liên kết (&quot;có / thuộc về&quot;)" style="text;html=1;align=left;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1200" y="145" width="350" height="30" as="geometry"/></mxCell>
+        <mxCell id="n2a" style="html=1;endArrow=block;endFill=0;endSize=14;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="1200" y="200" as="sourcePoint"/><mxPoint x="1330" y="200" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="n2t" value="Inheritance — kế thừa (&quot;là một loại&quot;, is-a)" style="text;html=1;align=left;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1200" y="205" width="350" height="30" as="geometry"/></mxCell>
+        <mxCell id="n3a" style="html=1;endArrow=block;endFill=0;endSize=14;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="1200" y="260" as="sourcePoint"/><mxPoint x="1330" y="260" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="n3t" value="Realization — hiện thực interface (implements)" style="text;html=1;align=left;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1200" y="265" width="350" height="30" as="geometry"/></mxCell>
+        <mxCell id="n4a" style="html=1;endArrow=open;endSize=12;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="1200" y="320" as="sourcePoint"/><mxPoint x="1330" y="320" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="n4t" value="Dependency — phụ thuộc (class này &quot;dùng&quot; class kia)" style="text;html=1;align=left;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1200" y="325" width="350" height="30" as="geometry"/></mxCell>
+        <mxCell id="n5a" style="html=1;startArrow=diamondThin;startFill=0;startSize=16;endArrow=none;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="1330" y="380" as="sourcePoint"/><mxPoint x="1200" y="380" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="n5t" value="Aggregation — tổng hợp (&quot;có&quot; nhưng phần tồn tại độc lập)" style="text;html=1;align=left;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1200" y="385" width="350" height="30" as="geometry"/></mxCell>
+        <mxCell id="n6a" style="html=1;startArrow=diamondThin;startFill=1;startSize=16;endArrow=none;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="1330" y="440" as="sourcePoint"/><mxPoint x="1200" y="440" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="n6t" value="Composition — cấu thành (phần chết theo tổng thể)" style="text;html=1;align=left;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1200" y="445" width="350" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="hint" value="GỢI Ý ĐỌC ĐỀ (khi thấy chữ này → dùng quan hệ này):&#10;&#10;• &quot;is a type of&quot; / &quot;là loại&quot; / A, B, C là các loại của X → Inheritance (kế thừa)&#10;• &quot;implements&quot; / &quot;must implement interface&quot; → Realization (hiện thực interface)&#10;• &quot;has a&quot; / &quot;contains&quot; / &quot;A can have many B&quot; → Association (+ multiplicity)&#10;• &quot;is composed of&quot; / &quot;part of&quot; (phần chết khi tổng thể chết) → Composition (kim cương đen)&#10;• &quot;made up of&quot; nhưng phần vẫn sống độc lập → Aggregation (kim cương rỗng)&#10;• &quot;service depends on / uses repository&quot; → Dependency (mũi tên đứt)&#10;&#10;MULTIPLICITY (số lượng ghi ở 2 đầu association):&#10;• 0..1 : 0 hoặc 1&#10;• n   : bắt buộc đúng n&#10;• 0..* : 0 hoặc nhiều&#10;• 1..* : 1 hoặc nhiều&#10;• m..n : tối thiểu m, tối đa n&#10;&#10;NHỚ: private (-), public (+), protected (#). Attribute: - name: type. Method: + name(): returnType." style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=8;fillColor=none;strokeColor=#d6b656;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="740" width="1120" height="360" as="geometry"/></mxCell>
+
+        <mxCell id="ex" value="VÍ DỤ MẪU (đề EMS — Event Management System):&#10;&#10;• User (abstract) &#8592; Student, Lecturer, Organizer, Admin   → INHERITANCE (đề: &quot;are specialized types of User&quot;)&#10;• User &quot;1&quot; ——— &quot;*&quot; Registration   → ASSOCIATION + multiplicity (đề: &quot;a user can register for multiple events&quot;)&#10;• Event &quot;1&quot; ——— &quot;*&quot; Registration   → ASSOCIATION (đề: &quot;each event can have multiple registrations&quot;)&#10;• Event - - -&gt; EventStatus {Planned, OpenForRegistration, Ongoing, Completed, Cancelled}   → ENUM&#10;• EventRepository / RegistrationRepository - - -▷ Repository&lt;T&gt;   → REALIZATION (đề: &quot;must implement Repository&lt;T&gt;&quot;)&#10;• EventService / RegistrationService - - -&gt; Repository   → DEPENDENCY (đề: &quot;service layer depends on repository&quot;)&#10;&#10;Cách đọc ra quan hệ: &quot;specialized types of&quot; = kế thừa | &quot;can have multiple&quot; = association 1..* | &quot;must implement interface&quot; = realization | &quot;depends on&quot; = dependency." style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=8;fillColor=none;strokeColor=#82b366;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="1120" width="1120" height="260" as="geometry"/></mxCell>
+
+        <mxCell id="c_lbl" value="◀ DIAGRAM EMS HOÀN CHỈNH (mẫu đã điền — nhìn theo để vẽ):" style="text;html=1;fontStyle=1;fontSize=15;align=left;fontColor=#2E7D32;" vertex="1" parent="1"><mxGeometry x="40" y="1420" width="800" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="c_User" value="&lt;&lt;abstract&gt;&gt;&#10;User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=40;fillColor=none;" vertex="1" parent="1"><mxGeometry x="560" y="1470" width="240" height="130" as="geometry"/></mxCell>
+        <mxCell id="c_Uf" value="- userId: int&#10;- fullName: String&#10;- email: String" style="text;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="c_User"><mxGeometry y="40" width="240" height="50" as="geometry"/></mxCell>
+        <mxCell id="c_Ud" value="" style="line;strokeWidth=1;" vertex="1" parent="c_User"><mxGeometry y="90" width="240" height="8" as="geometry"/></mxCell>
+        <mxCell id="c_Um" value="+ login(): boolean" style="text;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="c_User"><mxGeometry y="98" width="240" height="32" as="geometry"/></mxCell>
+
+        <mxCell id="c_Student" value="Student" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="120" y="1680" width="160" height="55" as="geometry"/></mxCell>
+        <mxCell id="c_Sf" value="+ registerEvent()" style="text;align=left;spacingLeft=6;" vertex="1" parent="c_Student"><mxGeometry y="26" width="160" height="29" as="geometry"/></mxCell>
+        <mxCell id="c_Lecturer" value="Lecturer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="320" y="1680" width="160" height="55" as="geometry"/></mxCell>
+        <mxCell id="c_Lf" value="+ registerEvent()" style="text;align=left;spacingLeft=6;" vertex="1" parent="c_Lecturer"><mxGeometry y="26" width="160" height="29" as="geometry"/></mxCell>
+        <mxCell id="c_Organizer" value="Organizer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="640" y="1680" width="160" height="55" as="geometry"/></mxCell>
+        <mxCell id="c_Of" value="+ createEvent()" style="text;align=left;spacingLeft=6;" vertex="1" parent="c_Organizer"><mxGeometry y="26" width="160" height="29" as="geometry"/></mxCell>
+        <mxCell id="c_Admin" value="Admin" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="840" y="1680" width="160" height="55" as="geometry"/></mxCell>
+        <mxCell id="c_Af" value="+ approveEvent()" style="text;align=left;spacingLeft=6;" vertex="1" parent="c_Admin"><mxGeometry y="26" width="160" height="29" as="geometry"/></mxCell>
+
+        <mxCell id="c_i1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;endSize=14;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="c_Student" target="c_User"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c_i2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;endSize=14;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="c_Lecturer" target="c_User"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c_i3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;endSize=14;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="c_Organizer" target="c_User"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c_i4" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;endSize=14;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="c_Admin" target="c_User"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="c_Event" value="Event" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="120" y="1810" width="220" height="130" as="geometry"/></mxCell>
+        <mxCell id="c_Ef" value="- eventId: int&#10;- capacity: int&#10;- status: EventStatus" style="text;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="c_Event"><mxGeometry y="26" width="220" height="60" as="geometry"/></mxCell>
+        <mxCell id="c_Edv" value="" style="line;strokeWidth=1;" vertex="1" parent="c_Event"><mxGeometry y="86" width="220" height="8" as="geometry"/></mxCell>
+        <mxCell id="c_Em" value="+ isOpen(): boolean" style="text;align=left;spacingLeft=6;" vertex="1" parent="c_Event"><mxGeometry y="94" width="220" height="36" as="geometry"/></mxCell>
+
+        <mxCell id="c_Reg" value="Registration" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="500" y="1810" width="220" height="100" as="geometry"/></mxCell>
+        <mxCell id="c_Rf" value="- regId: int&#10;- status: RegStatus" style="text;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="c_Reg"><mxGeometry y="26" width="220" height="74" as="geometry"/></mxCell>
+
+        <mxCell id="c_Enum" value="&lt;&lt;enumeration&gt;&gt;&#10;EventStatus" style="swimlane;fontStyle=2;align=center;verticalAlign=top;startSize=40;fillColor=none;" vertex="1" parent="1"><mxGeometry x="860" y="1810" width="200" height="130" as="geometry"/></mxCell>
+        <mxCell id="c_En" value="Planned&#10;OpenForRegistration&#10;Ongoing&#10;Completed&#10;Cancelled" style="text;align=left;spacingLeft=6;verticalAlign=top;fontStyle=0;" vertex="1" parent="c_Enum"><mxGeometry y="40" width="200" height="90" as="geometry"/></mxCell>
+
+        <mxCell id="c_a1" value="1                              *" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="c_User" target="c_Reg"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c_a2" value="1          *" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;exitX=1;exitY=0.4;entryX=0;entryY=0.4;" edge="1" parent="1" source="c_Event" target="c_Reg"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c_a3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;dashed=1;exitX=1;exitY=0.8;entryX=0;entryY=0.5;" edge="1" parent="1" source="c_Event" target="c_Enum"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="c_ESvc" value="EventService" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="120" y="1990" width="220" height="60" as="geometry"/></mxCell>
+        <mxCell id="c_ESm" value="+ createEvent()  + approveEvent()" style="text;align=left;spacingLeft=6;" vertex="1" parent="c_ESvc"><mxGeometry y="26" width="220" height="34" as="geometry"/></mxCell>
+        <mxCell id="c_RSvc" value="RegistrationService" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="500" y="1990" width="220" height="60" as="geometry"/></mxCell>
+        <mxCell id="c_RSm" value="+ register(user, event)" style="text;align=left;spacingLeft=6;" vertex="1" parent="c_RSvc"><mxGeometry y="26" width="220" height="34" as="geometry"/></mxCell>
+        <mxCell id="c_IRepo" value="&lt;&lt;interface&gt;&gt;&#10;Repository&lt;T&gt;" style="swimlane;fontStyle=2;align=center;verticalAlign=top;startSize=40;fillColor=none;" vertex="1" parent="1"><mxGeometry x="820" y="1990" width="240" height="80" as="geometry"/></mxCell>
+        <mxCell id="c_IRm" value="+ add(T) / findById(id): T" style="text;align=left;spacingLeft=6;fontStyle=0;" vertex="1" parent="c_IRepo"><mxGeometry y="40" width="240" height="40" as="geometry"/></mxCell>
+
+        <mxCell id="c_ERepo" value="EventRepository" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="500" y="2130" width="220" height="50" as="geometry"/></mxCell>
+        <mxCell id="c_ERd" value="implements Repository&lt;Event&gt;" style="text;align=left;spacingLeft=6;fontStyle=0;fontSize=10;" vertex="1" parent="c_ERepo"><mxGeometry y="26" width="220" height="24" as="geometry"/></mxCell>
+        <mxCell id="c_RRepo" value="RegistrationRepository" style="swimlane;fontStyle=1;align=center;verticalAlign=top;startSize=26;fillColor=none;" vertex="1" parent="1"><mxGeometry x="800" y="2130" width="260" height="50" as="geometry"/></mxCell>
+        <mxCell id="c_RRd" value="implements Repository&lt;Registration&gt;" style="text;align=left;spacingLeft=6;fontStyle=0;fontSize=10;" vertex="1" parent="c_RRepo"><mxGeometry y="26" width="260" height="24" as="geometry"/></mxCell>
+
+        <mxCell id="c_d1" value="«use»" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="c_RSvc" target="c_IRepo"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c_r1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;endSize=14;dashed=1;exitX=0.5;exitY=0;entryX=0.25;entryY=1;" edge="1" parent="1" source="c_ERepo" target="c_IRepo"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c_r2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;endSize=14;dashed=1;exitX=0.5;exitY=0;entryX=0.75;entryY=1;" edge="1" parent="1" source="c_RRepo" target="c_IRepo"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c_u1" value="«use»" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="c_ESvc" target="c_Event"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c_u2" value="«use»" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="c_RSvc" target="c_Reg"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="2-Sequence Diagram" id="seq">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="st" value="SEQUENCE DIAGRAM — TEMPLATE" style="text;html=1;fontStyle=1;fontSize=20;align=left;" vertex="1" parent="1"><mxGeometry x="40" y="20" width="600" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="actor" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1"><mxGeometry x="50" y="80" width="30" height="60" as="geometry"/></mxCell>
+        <mxCell id="l1" value=":UI / Boundary" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;collapsible=0;fillColor=none;size=40;" vertex="1" parent="1"><mxGeometry x="140" y="80" width="150" height="760" as="geometry"/></mxCell>
+        <mxCell id="l2" value=":Controller / Service" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;collapsible=0;fillColor=none;size=40;" vertex="1" parent="1"><mxGeometry x="360" y="80" width="180" height="760" as="geometry"/></mxCell>
+        <mxCell id="l3" value=":Repository" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;collapsible=0;fillColor=none;size=40;" vertex="1" parent="1"><mxGeometry x="620" y="80" width="160" height="760" as="geometry"/></mxCell>
+        <mxCell id="l4" value="entity:Entity" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;collapsible=0;fillColor=none;size=40;" vertex="1" parent="1"><mxGeometry x="860" y="80" width="180" height="760" as="geometry"/></mxCell>
+
+        <!-- activation bars: children of lifelines, x centered -->
+        <mxCell id="a1" value="" style="html=1;points=[];fillColor=none;strokeColor=#000000;" vertex="1" parent="l2"><mxGeometry x="84" y="80" width="12" height="470" as="geometry"/></mxCell>
+        <mxCell id="a2" value="" style="html=1;points=[];fillColor=none;strokeColor=#000000;" vertex="1" parent="l3"><mxGeometry x="74" y="120" width="12" height="40" as="geometry"/></mxCell>
+        <mxCell id="au" value="" style="html=1;points=[];fillColor=none;strokeColor=#000000;" vertex="1" parent="l1"><mxGeometry x="69" y="80" width="12" height="440" as="geometry"/></mxCell>
+        <mxCell id="a4" value="" style="html=1;points=[];fillColor=none;strokeColor=#000000;" vertex="1" parent="l4"><mxGeometry x="84" y="330" width="12" height="40" as="geometry"/></mxCell>
+
+        <!-- messages: absolute coords, perfectly horizontal -->
+        <mxCell id="m1" value="1: request()" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="221" y="170" as="sourcePoint"/><mxPoint x="444" y="170" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2: findById(id)" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="456" y="220" as="sourcePoint"/><mxPoint x="694" y="220" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="m2r" value="data" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="694" y="255" as="sourcePoint"/><mxPoint x="456" y="255" as="targetPoint"/></mxGeometry>
+        </mxCell>
+
+        <mxCell id="alt" value="alt" style="shape=umlFrame;html=1;width=40;height=24;fillColor=none;verticalAlign=top;" vertex="1" parent="1"><mxGeometry x="345" y="290" width="720" height="320" as="geometry"/></mxCell>
+        <mxCell id="altc1" value="[điều kiện đúng]" style="text;html=1;fontStyle=1;fontColor=#B85450;align=left;" vertex="1" parent="1"><mxGeometry x="400" y="293" width="240" height="20" as="geometry"/></mxCell>
+
+        <mxCell id="m3" value="3: create() / save()" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="456" y="350" as="sourcePoint"/><mxPoint x="950" y="350" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="m3r" value="saved" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="950" y="385" as="sourcePoint"/><mxPoint x="456" y="385" as="targetPoint"/></mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4: success" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="444" y="420" as="sourcePoint"/><mxPoint x="221" y="420" as="targetPoint"/></mxGeometry>
+        </mxCell>
+
+        <mxCell id="div" value="" style="line;strokeWidth=1;dashed=1;html=1;strokeColor=#B85450;" vertex="1" parent="1"><mxGeometry x="345" y="460" width="720" height="8" as="geometry"/></mxCell>
+        <mxCell id="divc" value="[điều kiện sai / else]" style="text;html=1;fontStyle=1;fontColor=#B85450;align=left;" vertex="1" parent="1"><mxGeometry x="400" y="468" width="240" height="20" as="geometry"/></mxCell>
+        <mxCell id="m5" value="5: reject / error" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="444" y="530" as="sourcePoint"/><mxPoint x="221" y="530" as="targetPoint"/></mxGeometry>
+        </mxCell>
+
+        <mxCell id="shint" value="GỢI Ý SEQUENCE DIAGRAM:&#10;&#10;THỨ TỰ CỘT (trái → phải theo Layered): Actor → UI/Boundary → Controller/Service → Repository → Entity.&#10;&#10;LOẠI MŨI TÊN:&#10;• Nét liền, đầu đặc → synchronous call (gọi hàm, chờ kết quả). Ghi tên method: findById(), save()...&#10;• Nét đứt, đầu mở → return value (giá trị trả về).&#10;&#10;ACTIVATION BAR: thanh chữ nhật mỏng trên lifeline = object đang xử lý. Service thường có bar dài nhất.&#10;&#10;alt FRAGMENT — khi đề có &quot;if... otherwise&quot; / &quot;whether... or&quot;:&#10;• Mỗi nhánh 1 ngăn, ghi guard trong ngoặc vuông [điều kiện] ở góc trái trên.&#10;• Ngăn cách bằng ĐƯỜNG NGANG ĐỨT NÉT (không mũi tên).&#10;• Đề EMS: alt [event open]/[closed], alt [capacity available]/[full].&#10;&#10;REPOSITORY PATTERN phải HIỆN RÕ: gọi thẳng findById(), countByEvent(), add() — không &quot;tự truy&quot; dữ liệu." style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=8;fillColor=none;strokeColor=#d6b656;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1"><mxGeometry x="1120" y="80" width="440" height="470" as="geometry"/></mxCell>
+
+        <mxCell id="sex" value="VÍ DỤ MẪU (đề EMS — Use case: Register for Event):&#10;&#10;Cột: Student → :StudentPortal → :RegistrationService → :EventRepository / :RegistrationRepository → event:Event&#10;&#10;1: register(userId, eventId)         (Student → Portal → Service)&#10;2: findById(eventId) → event         (Service → EventRepository)   ← Repository Pattern&#10;alt [event.isOpen() == true]&#10;   3: countByEvent(eventId) → currentCount   (Service → RegistrationRepository)&#10;   alt [currentCount &lt; capacity]&#10;      4: create Registration(...) → reg&#10;      5: add(reg) → saved&#10;      6: registration confirmed   (→ Portal)&#10;   else [currentCount &gt;= capacity]&#10;      7: reject &quot;Event is full&quot;&#10;else [event.isOpen() == false]&#10;   8: reject &quot;Registration closed&quot;&#10;&#10;Mẹo: 2 chữ &quot;whether... whether...&quot; trong đề = 2 khung alt (open/closed + available/full)." style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=8;fillColor=none;strokeColor=#82b366;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1"><mxGeometry x="1120" y="580" width="440" height="380" as="geometry"/></mxCell>
+
+        <mxCell id="q_lbl" value="▼ DIAGRAM EMS HOÀN CHỈNH (mẫu đã điền — Register for Event):" style="text;html=1;fontStyle=1;fontSize=15;align=left;fontColor=#2E7D32;" vertex="1" parent="1"><mxGeometry x="40" y="1000" width="800" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="q_actor" value="Student" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1"><mxGeometry x="50" y="1060" width="30" height="60" as="geometry"/></mxCell>
+        <mxCell id="q_l1" value=":StudentPortal" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;collapsible=0;fillColor=none;size=40;" vertex="1" parent="1"><mxGeometry x="140" y="1060" width="150" height="760" as="geometry"/></mxCell>
+        <mxCell id="q_l2" value=":RegistrationService" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;collapsible=0;fillColor=none;size=40;" vertex="1" parent="1"><mxGeometry x="360" y="1060" width="180" height="760" as="geometry"/></mxCell>
+        <mxCell id="q_l3" value=":EventRepository" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;collapsible=0;fillColor=none;size=40;" vertex="1" parent="1"><mxGeometry x="620" y="1060" width="160" height="760" as="geometry"/></mxCell>
+        <mxCell id="q_l4" value=":RegistrationRepository" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;collapsible=0;fillColor=none;size=40;" vertex="1" parent="1"><mxGeometry x="850" y="1060" width="200" height="760" as="geometry"/></mxCell>
+        <mxCell id="q_l5" value="event:Event / reg:Registration" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;collapsible=0;fillColor=none;size=40;" vertex="1" parent="1"><mxGeometry x="1120" y="1060" width="220" height="760" as="geometry"/></mxCell>
+
+        <mxCell id="q_a1" value="" style="html=1;points=[];fillColor=none;strokeColor=#000000;" vertex="1" parent="q_l2"><mxGeometry x="84" y="80" width="12" height="500" as="geometry"/></mxCell>
+        <mxCell id="q_au" value="" style="html=1;points=[];fillColor=none;strokeColor=#000000;" vertex="1" parent="q_l1"><mxGeometry x="69" y="80" width="12" height="470" as="geometry"/></mxCell>
+
+        <mxCell id="q_m1" value="1: register(userId, eventId)" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="221" y="1150" as="sourcePoint"/><mxPoint x="444" y="1150" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="q_m2" value="2: findById(eventId)" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="456" y="1200" as="sourcePoint"/><mxPoint x="700" y="1200" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="q_m2r" value="event" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="700" y="1235" as="sourcePoint"/><mxPoint x="456" y="1235" as="targetPoint"/></mxGeometry></mxCell>
+
+        <mxCell id="q_alt1" value="alt" style="shape=umlFrame;html=1;width=40;height=24;fillColor=none;verticalAlign=top;" vertex="1" parent="1"><mxGeometry x="345" y="1270" width="1000" height="490" as="geometry"/></mxCell>
+        <mxCell id="q_alt1c" value="[event.isOpen() == true]" style="text;html=1;fontStyle=1;fontColor=#B85450;align=left;" vertex="1" parent="1"><mxGeometry x="400" y="1273" width="240" height="20" as="geometry"/></mxCell>
+        <mxCell id="q_m3" value="3: countByEvent(eventId)" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="456" y="1320" as="sourcePoint"/><mxPoint x="940" y="1320" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="q_m3r" value="currentCount" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="940" y="1355" as="sourcePoint"/><mxPoint x="456" y="1355" as="targetPoint"/></mxGeometry></mxCell>
+
+        <mxCell id="q_alt2" value="alt" style="shape=umlFrame;html=1;width=40;height=24;fillColor=none;verticalAlign=top;" vertex="1" parent="1"><mxGeometry x="365" y="1370" width="960" height="270" as="geometry"/></mxCell>
+        <mxCell id="q_alt2c" value="[currentCount &lt; capacity]  capacity available" style="text;html=1;fontStyle=1;fontColor=#B85450;align=left;" vertex="1" parent="1"><mxGeometry x="420" y="1373" width="360" height="20" as="geometry"/></mxCell>
+        <mxCell id="q_m4" value="4: create Registration(user, event, CONFIRMED)" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="456" y="1420" as="sourcePoint"/><mxPoint x="1230" y="1420" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="q_m4r" value="reg" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="1230" y="1455" as="sourcePoint"/><mxPoint x="456" y="1455" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="q_m5" value="5: add(reg)" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="456" y="1490" as="sourcePoint"/><mxPoint x="940" y="1490" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="q_m5r" value="saved" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="940" y="1525" as="sourcePoint"/><mxPoint x="456" y="1525" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="q_m6" value="6: registration confirmed" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="444" y="1560" as="sourcePoint"/><mxPoint x="221" y="1560" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="q_div2" value="" style="line;strokeWidth=1;dashed=1;html=1;strokeColor=#B85450;" vertex="1" parent="1"><mxGeometry x="365" y="1590" width="960" height="8" as="geometry"/></mxCell>
+        <mxCell id="q_div2c" value="[currentCount &gt;= capacity]  event full" style="text;html=1;fontStyle=1;fontColor=#B85450;align=left;" vertex="1" parent="1"><mxGeometry x="420" y="1598" width="360" height="20" as="geometry"/></mxCell>
+        <mxCell id="q_m7" value="7: reject - Event is full" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="444" y="1625" as="sourcePoint"/><mxPoint x="221" y="1625" as="targetPoint"/></mxGeometry></mxCell>
+
+        <mxCell id="q_div1" value="" style="line;strokeWidth=1;dashed=1;html=1;strokeColor=#B85450;" vertex="1" parent="1"><mxGeometry x="345" y="1680" width="1000" height="8" as="geometry"/></mxCell>
+        <mxCell id="q_div1c" value="[event.isOpen() == false]  event closed" style="text;html=1;fontStyle=1;fontColor=#B85450;align=left;" vertex="1" parent="1"><mxGeometry x="400" y="1688" width="360" height="20" as="geometry"/></mxCell>
+        <mxCell id="q_m8" value="8: reject - Registration closed" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="444" y="1725" as="sourcePoint"/><mxPoint x="221" y="1725" as="targetPoint"/></mxGeometry></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="3-State Diagram" id="state">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1050" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="stt" value="STATE DIAGRAM — TEMPLATE" style="text;html=1;fontStyle=1;fontSize=20;align=left;" vertex="1" parent="1"><mxGeometry x="40" y="20" width="600" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="i" value="" style="ellipse;fillColor=#000000;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="308" y="80" width="24" height="24" as="geometry"/></mxCell>
+        <mxCell id="s1" value="State1&#10;(Draft)" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="240" y="150" width="160" height="55" as="geometry"/></mxCell>
+        <mxCell id="s2" value="State2&#10;(Approved / Open)" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="240" y="290" width="160" height="55" as="geometry"/></mxCell>
+        <mxCell id="s3" value="State3&#10;(Ongoing)" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="240" y="430" width="160" height="55" as="geometry"/></mxCell>
+        <mxCell id="s4" value="State4&#10;(Completed)" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="240" y="570" width="160" height="55" as="geometry"/></mxCell>
+        <mxCell id="salt" value="AltState&#10;(Cancelled / Rejected)" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="560" y="290" width="170" height="55" as="geometry"/></mxCell>
+        <mxCell id="f1" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;shape=endState;" vertex="1" parent="1"><mxGeometry x="305" y="700" width="30" height="30" as="geometry"/></mxCell>
+        <mxCell id="f2" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;shape=endState;" vertex="1" parent="1"><mxGeometry x="630" y="420" width="30" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="ts0" value="submitEvent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="i" target="s1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ts1" value="triggerEvent [guard]" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="s1" target="s2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ts2" value="triggerEvent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="s2" target="s3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ts3" value="triggerEvent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="s3" target="s4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ts4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="s4" target="f1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ts5" value="cancelEvent (nhánh rẽ)" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="s2" target="salt"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ts6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="salt" target="f2"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="sthint" value="GỢI Ý STATE DIAGRAM (vòng đời 1 đối tượng, vd Event):&#10;&#10;• Bắt buộc có: 1 initial state (chấm đen ●) và ≥1 final state (chấm đen có vòng ◉).&#10;• State = danh từ/tính từ mô tả trạng thái: Draft, Approved, Ongoing, Completed...&#10;• Transition = mũi tên liền có tên EVENT kích hoạt: submitEvent, approveEvent, startEvent, finishEvent, cancelEvent.&#10;• Guard [điều kiện] ghi sau tên event khi transition chỉ xảy ra nếu thỏa: registerParticipant [capacity reached].&#10;• Internal transition (lặp không đổi state): ghi thẳng trong box, vd &quot;registerParticipant [slot free] / addParticipant&quot;.&#10;• Nhánh rẽ (branching): ít nhất 1 đường tới trạng thái kết thúc thay thế — Cancelled / Rejected.&#10;&#10;KHI ĐỌC ĐỀ: mỗi câu &quot;event goes to state X when Y happens&quot; = 1 transition. Đếm đủ số transition đề yêu cầu (đề EMS: ≥ 6)." style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=8;fillColor=none;strokeColor=#d6b656;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1"><mxGeometry x="820" y="470" width="740" height="320" as="geometry"/></mxCell>
+
+        <mxCell id="stex" value="VÍ DỤ MẪU (đề EMS — vòng đời Event):&#10;&#10;● (initial)&#10;  --submitEvent--&gt; Draft&#10;  --approveEvent--&gt; Approved&#10;  --openRegistration--&gt; OpenForRegistration&#10;       (internal: registerParticipant [slot free] / addParticipant)&#10;  --registerParticipant [capacity reached]--&gt; Full&#10;  --startEvent--&gt; Ongoing&#10;  --finishEvent--&gt; Completed --&gt; ◉ (final)&#10;&#10;Nhánh rẽ (branching):&#10;  Draft --rejectEvent [not approved]--&gt; Rejected --&gt; ◉&#10;  Approved / OpenForRegistration --cancelEvent--&gt; Cancelled --&gt; ◉&#10;&#10;Đủ ≥ 6 transition: submitEvent, approveEvent, openRegistration, registerParticipant, startEvent, finishEvent, cancelEvent." style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=8;fillColor=none;strokeColor=#82b366;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1"><mxGeometry x="820" y="80" width="740" height="360" as="geometry"/></mxCell>
+
+        <mxCell id="p_lbl" value="▼ DIAGRAM EMS HOÀN CHỈNH (mẫu đã điền — vòng đời Event):" style="text;html=1;fontStyle=1;fontSize=15;align=left;fontColor=#2E7D32;" vertex="1" parent="1"><mxGeometry x="40" y="820" width="800" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="p_init" value="" style="ellipse;fillColor=#000000;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="588" y="880" width="24" height="24" as="geometry"/></mxCell>
+        <mxCell id="p_Draft" value="Draft" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="520" y="960" width="160" height="50" as="geometry"/></mxCell>
+        <mxCell id="p_Approved" value="Approved" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="520" y="1110" width="160" height="50" as="geometry"/></mxCell>
+        <mxCell id="p_Open" value="OpenForRegistration&#10;&#10;registerParticipant [slot free] / addParticipant" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;verticalAlign=top;spacingTop=6;" vertex="1" parent="1"><mxGeometry x="490" y="1260" width="220" height="80" as="geometry"/></mxCell>
+        <mxCell id="p_Full" value="Full" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="900" y="1270" width="140" height="50" as="geometry"/></mxCell>
+        <mxCell id="p_Ongoing" value="Ongoing" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="520" y="1440" width="160" height="50" as="geometry"/></mxCell>
+        <mxCell id="p_Completed" value="Completed" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="520" y="1590" width="160" height="50" as="geometry"/></mxCell>
+        <mxCell id="p_Rejected" value="Rejected" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="120" y="1110" width="150" height="50" as="geometry"/></mxCell>
+        <mxCell id="p_Cancelled" value="Cancelled" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="120" y="1275" width="150" height="50" as="geometry"/></mxCell>
+        <mxCell id="p_f1" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;shape=endState;" vertex="1" parent="1"><mxGeometry x="585" y="1710" width="30" height="30" as="geometry"/></mxCell>
+        <mxCell id="p_f2" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;shape=endState;" vertex="1" parent="1"><mxGeometry x="180" y="1420" width="30" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="p_t0" value="submitEvent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p_init" target="p_Draft"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="p_t1" value="approveEvent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p_Draft" target="p_Approved"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="p_t2" value="openRegistration" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p_Approved" target="p_Open"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="p_t6" value="startEvent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p_Open" target="p_Ongoing"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="p_t8" value="finishEvent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p_Ongoing" target="p_Completed"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="p_t9" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p_Completed" target="p_f1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="p_t3" value="rejectEvent [not approved]" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="p_Draft" target="p_Rejected"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="p_t4" value="registerParticipant&#10;[capacity reached]" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p_Open" target="p_Full"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="p_t7" value="startEvent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="p_Full" target="p_Ongoing"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="p_t11" value="cancelEvent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0;exitY=0.5;entryX=1;entryY=0.3;" edge="1" parent="1" source="p_Approved" target="p_Cancelled"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="380" y="1135"/><mxPoint x="380" y="1290"/></Array></mxGeometry></mxCell>
+        <mxCell id="p_t10" value="cancelEvent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0;exitY=0.7;entryX=1;entryY=0.7;" edge="1" parent="1" source="p_Open" target="p_Cancelled"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="p_t12" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p_Cancelled" target="p_f2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="p_t13" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p_Rejected" target="p_f2"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="4-Activity Diagram" id="activity">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="att" value="ACTIVITY DIAGRAM — TEMPLATE" style="text;html=1;fontStyle=1;fontSize=20;align=left;" vertex="1" parent="1"><mxGeometry x="40" y="20" width="600" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="ai" value="" style="ellipse;fillColor=#000000;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="308" y="80" width="24" height="24" as="geometry"/></mxCell>
+        <mxCell id="ac1" value="Action 1&#10;(vd: select event)" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="230" y="150" width="180" height="50" as="geometry"/></mxCell>
+        <mxCell id="ac2" value="Action 2&#10;(vd: submit request)" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="230" y="240" width="180" height="50" as="geometry"/></mxCell>
+        <mxCell id="dec" value="Điều kiện?&#10;(vd: capacity còn?)" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="250" y="330" width="140" height="90" as="geometry"/></mxCell>
+        <mxCell id="ac3" value="Action 3 (Yes)&#10;(vd: create registration)" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="140" y="470" width="180" height="50" as="geometry"/></mxCell>
+        <mxCell id="ac4" value="Action 4 (No)&#10;(vd: reject)" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="440" y="470" width="180" height="50" as="geometry"/></mxCell>
+        <mxCell id="mrg" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="290" y="570" width="60" height="60" as="geometry"/></mxCell>
+        <mxCell id="af" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;shape=endState;" vertex="1" parent="1"><mxGeometry x="300" y="690" width="30" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="ae0" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ai" target="ac1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ae1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ac1" target="ac2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ae2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ac2" target="dec"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ae3" value="[yes]" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec" target="ac3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ae4" value="[no]" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec" target="ac4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ae5" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="ac3" target="mrg"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ae6" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="ac4" target="mrg"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ae7" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="mrg" target="af"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="ahint" value="GỢI Ý ACTIVITY DIAGRAM (luồng công việc / quy trình xử lý):&#10;&#10;KÝ HIỆU:&#10;• ● initial node (bắt đầu) — ◉ final node (kết thúc).&#10;• Hình chữ nhật bo tròn = Action / Activity (1 bước xử lý). Đặt tên bằng ĐỘNG TỪ: &quot;submit request&quot;, &quot;create registration&quot;.&#10;• Hình thoi ◇ = Decision (rẽ nhánh) HOẶC Merge (gộp nhánh). Ghi guard [yes]/[no], [valid]/[invalid] trên các nhánh ra.&#10;• Thanh đen ngang = Fork/Join (chạy song song) — dùng khi nhiều việc làm đồng thời.&#10;&#10;KHÁC STATE DIAGRAM Ở ĐIỂM NÀO:&#10;• State diagram mô tả TRẠNG THÁI của 1 object (danh từ); Activity mô tả HÀNH ĐỘNG/luồng xử lý (động từ).&#10;• Đề nói &quot;describe the process / workflow / các bước&quot; → Activity. Đề nói &quot;lifecycle / states of Event&quot; → State.&#10;&#10;SWIMLANE (tùy chọn): chia cột theo actor (Student | System | Admin) nếu đề nhấn mạnh &quot;ai làm bước nào&quot;." style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=8;fillColor=none;strokeColor=#d6b656;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1"><mxGeometry x="720" y="80" width="840" height="360" as="geometry"/></mxCell>
+
+        <mxCell id="aex" value="VÍ DỤ MẪU (đề EMS — quy trình Register for Event):&#10;&#10;● (bắt đầu)&#10;  → Select event                (Student)&#10;  → Submit registration request  (Student)&#10;  → Check event is open?         (System)  ◇ decision&#10;       [no]  → Show &quot;Registration closed&quot; → (kết thúc)&#10;       [yes] → Check capacity available?   ◇ decision&#10;                  [no]  → Reject &quot;Event is full&quot;&#10;                  [yes] → Create registration record&#10;                        → Confirm participation&#10;  → (merge) → ◉ (kết thúc)&#10;&#10;Lưu ý: Action đặt tên bằng ĐỘNG TỪ (Select, Submit, Create, Confirm).&#10;Nếu đề bắt &quot;ai làm gì&quot;: kẻ swimlane 2 cột | Student | System |." style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=8;fillColor=none;strokeColor=#82b366;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1"><mxGeometry x="720" y="470" width="840" height="340" as="geometry"/></mxCell>
+
+        <mxCell id="v_lbl" value="▼ DIAGRAM EMS HOÀN CHỈNH (mẫu đã điền — quy trình Register for Event):" style="text;html=1;fontStyle=1;fontSize=15;align=left;fontColor=#2E7D32;" vertex="1" parent="1"><mxGeometry x="40" y="820" width="900" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="v_i" value="" style="ellipse;fillColor=#000000;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="308" y="880" width="24" height="24" as="geometry"/></mxCell>
+        <mxCell id="v_a1" value="Select event" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="230" y="950" width="180" height="50" as="geometry"/></mxCell>
+        <mxCell id="v_a2" value="Submit registration request" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="230" y="1040" width="180" height="50" as="geometry"/></mxCell>
+        <mxCell id="v_d1" value="Event is open?" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="250" y="1130" width="140" height="90" as="geometry"/></mxCell>
+        <mxCell id="v_d2" value="Capacity available?" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="250" y="1290" width="140" height="90" as="geometry"/></mxCell>
+        <mxCell id="v_a3" value="Create registration record" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="140" y="1450" width="180" height="50" as="geometry"/></mxCell>
+        <mxCell id="v_a4" value="Confirm participation" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="140" y="1540" width="180" height="50" as="geometry"/></mxCell>
+        <mxCell id="v_rej1" value="Reject: Event is full" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="470" y="1310" width="180" height="50" as="geometry"/></mxCell>
+        <mxCell id="v_rej2" value="Show: Registration closed" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="470" y="1150" width="180" height="50" as="geometry"/></mxCell>
+        <mxCell id="v_mrg" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="380" y="1650" width="60" height="60" as="geometry"/></mxCell>
+        <mxCell id="v_f" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;shape=endState;" vertex="1" parent="1"><mxGeometry x="395" y="1770" width="30" height="30" as="geometry"/></mxCell>
+
+        <mxCell id="v_e0" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v_i" target="v_a1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="v_e1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v_a1" target="v_a2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="v_e2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v_a2" target="v_d1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="v_e3" value="[no]" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="v_d1" target="v_rej2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="v_e4" value="[yes]" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v_d1" target="v_d2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="v_e5" value="[no]" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="v_d2" target="v_rej1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="v_e6" value="[yes]" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="v_d2" target="v_a3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="v_e7" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v_a3" target="v_a4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="v_e8" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="v_a4" target="v_mrg"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="v_e9" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="v_rej1" target="v_mrg"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="v_e10" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="v_rej2" target="v_mrg"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="v_e11" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v_mrg" target="v_f"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+</mxfile>
